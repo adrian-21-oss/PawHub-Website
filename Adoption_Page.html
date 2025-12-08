@@ -708,13 +708,61 @@
             font-size: 14px;
             font-weight: 300;
         }
+
+
+        /* Footer Hover */
+        
+        .footer-links a:hover {
+            padding-left: 8px;
+            color: white;
+            text-decoration: underline;
+        }
+        
+        .newsletter-box {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .newsletter-box input {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 50px;
+            border: none;
+            outline: none;
+            font-family: "Poppins", sans-serif;
+        }
+        
+        .newsletter-box button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .newsletter-box button:hover {
+            background-color: #555;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 14px;
+            font-weight: 300;
+        }
     </style>
 </head>
 
 <body>
     <!-- Fixed Header -->
     <header>
-        <a href="HomePage.html" class="logo">PawHub</a>
+        <a href="index.html" class="logo">PawHub</a>
         <nav>
             <a href="index.html">Home</a>     <!-- Done -->
             <a href="" class="active">Adopt</a> <!-- Done -->
@@ -1109,7 +1157,7 @@
         </div>
     </div>
     <!-- Footer -->
-    <footer>
+   <footer>
         <div class="footer-content">
             <div class="footer-col">
                 <h4>PawHub</h4>
@@ -1139,6 +1187,10 @@
                     <button>Go</button>
                 </div>
             </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 PawHub. All Rights Reserved. | Designed with Love.</p>
         </div>
     </footer>
 

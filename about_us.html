@@ -30,7 +30,7 @@
 
         /* Navigation styles */
         nav {
-            
+
             background-color: #FFD6DC;
             padding: 1.2rem 3rem;
             display: flex;
@@ -963,13 +963,61 @@
             color: #E91E63;
         }
 
+
+        /* Footer Hover */
+        
+        .footer-links a:hover {
+            padding-left: 8px;
+            color: white;
+            text-decoration: underline;
+        }
+        
+        .newsletter-box {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .newsletter-box input {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 50px;
+            border: none;
+            outline: none;
+            font-family: "Poppins", sans-serif;
+        }
+        
+        .newsletter-box button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .newsletter-box button:hover {
+            background-color: #555;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 14px;
+            font-weight: 300;
+        }
+
       
     </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav>
-        <div class="logo" onclick="window.location.href='HomePage.html'">
+        <div class="logo" onclick="window.location.href='index.html'">
             <div class="Paw-icon" style="width: 25px; height: 25px; position: absolute; top: 21px; left: 42px;">🐾</div>
             <span style="color: #E91E63; font-size: 24; position:absolute; top: 20px; left: 88.5px;">PawHub</span>
         </div>
@@ -1284,6 +1332,77 @@
             </div>
         </div>
     </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>PawHub</h4>
+                <p>
+                    We believe every pet deserves a loving home. Join our community and find your new best friend today.
+                </p>
+            </div>
+
+            <div class="footer-col footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Adoption_Page.html">Adopt a Pet</a></li>
+                    <li><a href="blog.html">Care Guides</a></li>
+                    <li><a href="">About Us</a></li>
+                    <li><a href="get-involved.html">Volunteer</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Stay Updated</h4>
+                <p>
+                    Get the latest adoption tips and cute pet photos delivered to your inbox.
+                </p>
+                <div class="newsletter-box">
+                    <input type="email" placeholder="Enter your email" />
+                    <button>Go</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 PawHub. All Rights Reserved. | Designed with Love.</p>
+        </div>
+    </footer>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <script>
         function openTab(event, tabName) {
