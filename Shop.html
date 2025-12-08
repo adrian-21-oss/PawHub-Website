@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PawHub</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+        <!--<link rel="stylesheet" href="style.css">-->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <script src="script.js" defer></script>
+        
+        <style>
+            
+        
+
+
+        footer {
+                background-color: #e46885; /* The darker pink from your buttons */
+                color: white;
+
+                width: 8000px;
+                height: 350px;
+                
+                position: absolute;
+
+                top: 2773px;
+                left: -50px;
+
+                padding: 60px 0px 20px 0;
+                margin-top: 120px; /* Space between last card and footer */
+        }
+
+         .footer-content {
+                max-width: 1200px;
+                /* margin: 0 auto; */
+
+                padding-top: -40px;
+                padding-left: 250px;
+                
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 40px;
+        }  
+
+        .footer-col h4 {
+                font-size: 22px;
+                margin-bottom: 20px;
+                font-weight: 700;
+                color: #fff;
+        }
+
+        .footer-col p {
+                font-size: 14px;
+                font-weight: 300;
+                line-height: 1.8;
+                margin-bottom: 20px;
+                color: rgba(255, 255, 255, 0.9);
+        }
+
+        .footer-links ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+        }
+
+        .footer-links li {
+                margin-bottom: 12px;
+        }
+
+        .footer-links a {
+                text-decoration: none;
+                color: rgba(255, 255, 255, 0.9);
+                font-weight: 400;
+                transition: padding-left 0.3s;
+        }
+
+        .footer-links a:hover {
+                padding-left: 8px; /* Slide effect on hover */
+                color: white;
+                text-decoration: underline;
+        }
+
+            /* Newsletter Input Style to match your Hero Button */
+        .newsletter-box {
+                display: flex;
+                gap: 10px;
+                margin-top: 15px;
+        }
+
+        .newsletter-box input {
+                width: 100%;
+                padding: 12px 15px;
+                border-radius: 50px;
+                border: none;
+                outline: none;
+                font-family: "Poppins", sans-serif;
+        }
+
+        .newsletter-box button {
+                background-color: #333;
+                color: white;
+                border: none;
+                padding: 12px 20px;
+                border-radius: 50px;
+                cursor: pointer;
+                font-weight: 600;
+                transition: background 0.3s;
+        }
+
+        .newsletter-box button:hover {
+                background-color: #555;
+        }
+
+        .footer-bottom {
+                /* text-align: center; */
+
+                margin-top: 60px;
+                padding-top: 20px;
+                border-top: 1px solid rgba(255, 255, 255, 0.2);
+                font-size: 14px;
+                font-weight: 300;
+        }
+
+
+
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            
+            position: relative;
+            top: 15px;
+            left: 0;
+        }
+        
+        body {
+        
+            box-sizing: border-box;
+            overflow-x: hidden;
+
+                    
+        
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(180deg, #FFB6C1 0%, #FFC0CB 100%);
+            min-height: 100vh;
+        
+        }
+
+
+
+
+
+
+        hr {
+            position: relative;
+            top: 1000px;
+
+
+            display: block;
+            
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+            margin-left: auto;
+            margin-right: auto;
+            border-style: inset;
+            border-width: 1px;
+        }
+
+
+
+
+
+
+
+
+  /* Header */
+        
+        header {
+            background: rgba(255, 255, 255, 0.3);
+
+
+            padding: 20px 40px;
+            
+
+            position: absolute;
+            width: 8000px;
+            height: 37.5px;
+
+            top: 0px;
+
+            margin-left: -10px;
+            /* display: flex; */
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(10px);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            
+            position: absolute;
+
+            top: 20px;
+            left: 42px;
+
+            font-size: 24px;
+            font-weight: bold;
+            color: #E91E63;
+            text-decoration: none;
+        }
+        
+        .logo::before {
+            content: '🐾';
+            font-size: 28px;
+        }
+        
+        nav {
+            display: flex;
+            gap: 30px;
+
+            position:absolute;
+
+            left: 969px;
+            top: 13px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #666;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover,
+        nav a.active {
+            color: #E91E63;
+        }
+
+
+
+
+
+
+
+
+
+        #shopBody {
+            background: linear-gradient(180deg, #FFB6C1 0%, #FFC0CB 100%);
+            position: absolute;
+            
+            text-align: center;
+            top: 0px;
+            left: 0px;
+            
+            font-family: "Poppins", sans-serif;
+
+            width: 8000px;
+            height: 3140px;
+        }
+        #shopBodyMotto {
+            position: absolute;
+            width: 788px;
+            height: 131px;
+
+            top: 139px;
+            left: 370px;
+
+            text-align: center;
+        }
+        #itemsTable {
+            background-color: #F8C6D0;
+
+            
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+             
+
+            
+            position: absolute;
+            margin: 0px;
+            
+            border-radius: 41px;
+            
+            top: 385px;
+            left: 145px;
+            width: 1138px;
+            height: auto;
+            
+            padding-left: 43px;
+            padding-top: 47px;
+            padding-right: 43px;
+            padding-bottom: 47px;
+
+            justify-items: center;
+            /* align-items: center; */
+
+            justify-content: space-evenly;
+            align-content: space-evenly;
+
+
+            
+        }
+
+        .itemsDiv {
+
+            background-color: white;
+
+            width: 239px;
+            height: 374px;     
+            
+            border-radius: 41px;
+
+            margin-bottom: 41px;
+
+        }
+
+
+
+
+
+
+
+        </style>
+    </head>
+
+
+
+
+
+
+
+
+    <body>
+
+        
+
+
+        <div id="shopBody">
+            <div id="shopBodyMotto">
+
+                <p style="font-size: 70px;
+            color: rgba(233, 30, 99, 0.3);
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); position: absolute; margin: 0px; top: 0px; left: 0px; width: 788px;height: 75px;font-size: 64px; font-weight: bold;">Everything They Love</p>
+                <p style="color: #666;position: absolute; margin:0px;top: 95px; left:61px; width: 665px; height: 30px; font-size: 24px; font-weight: light;">Pet Essentials that your pet might want</p>            
+                
+            </div>
+
+            <div id="itemsTable">
+
+                <p style="width: 500px; height: 100px; position:absolute; top: 2380px; font-size: 16px; font-family: 'Poppins', sans-serif;">For purchase, you can visit the nearby PawHub brances for the product.</p>
+            </div>
+
+
+    
+        </div>
+
+
+  
+
+    <header>
+        <a href="HomePage.html" class="logo">PawHub</a>
+        <nav>
+            <a href="HomePage.html">Home</a>     <!-- Done -->
+            <a href="Adoption_Page.html">Adopt</a> <!-- Done -->
+            <a href="#",  class="active">Favourites</a>   <!-- Done -->
+            <a href="blog.html">Blog</a>
+            <a href="get-involved.html">Get Involved</a>
+            <a href="about_us.html">About Us</a>
+        </nav>
+    </header>
+        
+        
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>PawHub</h4>
+                    <p>
+                        We believe every pet deserves a loving home. Join our community and find your new best friend today.
+                    </p>
+                </div>
+
+                <div class="footer-col footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="HomePage.html">Home</a></li> <!-- Done -->
+                        <li><a href="Adoption_Page.html">Adopt a Pet</a></li><!-- Done -->
+                        <li><a href="blog.html">Care Guides</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="get-involved.html">Volunteer</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Stay Updated</h4>
+                    <p>
+                        Get the latest adoption tips and cute pet photos delivered to your inbox.
+                    </p>
+                    <div class="newsletter-box">
+                        <input type="email" placeholder="Enter your email" />
+                        <button>Go</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+            <p style="position: absolute; left: 640px;">&copy; 2025 PawHub. All Rights Reserved. | Designed with Love.</p>
+            </div>
+        </footer>
+
+
+
+        <script>
+
+
+        const products = [{
+            idNum: 1,
+            isPreferred: true,
+            isHot: true,
+            isBestSeller: true,
+            productName: "Squishy Squid Toy",
+            imageLink: "assets/images/favourites/PNG/download (2).png"
+        }, {
+            idNum: 2,
+            isPreferred: true,
+            isHot: true,
+            isBestSeller: true,
+            productName: "Pink Pet Toy Set",
+            imageLink: "assets/images/favourites/PNG/download (3).png"
+        }, {
+            idNum: 3,
+            isPreferred: true,
+            isHot: true,
+            isBestSeller: true,
+            productName: "Squishy Colorful Ball Set",
+            imageLink: "assets/images/favourites/PNG/download (1).png"
+        }, {
+            idNum: 4,
+            isPreferred: true,
+            isHot: true,
+            isBestSeller: true,
+            productName: "Friskies Pate Salmon Dinner",
+            imageLink: "assets/images/favourites/PNG/OIP (12).png"
+        }, {
+            idNum: 5,
+            isPreferred: true,
+            isHot: true,
+            isBestSeller: true,
+            productName: "Colorful Star Stuffed Toy Set",
+            imageLink: "assets/images/favourites/PNG/OIP (14).png"
+        }, {
+            idNum: 6,
+            isPreferred: true,
+            isHot: true,
+            isBestSeller: true,
+            productName: "Colorful Dog Bracelet",
+            imageLink: "assets/images/favourites/PNG/OIP (15).png"
+        }, {
+            idNum: 7,
+            isPreferred: true,
+            isHot: true,
+            isBestSeller: true,
+            productName: "Pet Interactive Bone Toy",
+            imageLink: "assets/images/favourites/PNG/OIP (16).png"
+        }, {
+            idNum: 8,
+            isPreferred: true,
+            isHot: true,
+            isBestSeller: true,
+            productName: "Interactive Educational Pet Puzzle",
+            imageLink: "assets/images/favourites/PNG/OIP (17).png"
+        }, {
+            idNum: 9,
+            isPreferred: true,
+            isHot: true,
+            isBestSeller: true,
+            productName: "Crochet Pinguin Pet Toy",
+            imageLink: "assets/images/favourites/PNG/download.png"
+        }, {
+            idNum: 10,
+            isPreferred: true,
+            isHot: true,
+            isBestSeller: true,
+            productName: "Grain Free Meow Mix",
+            imageLink: "assets/images/favourites/PNG/OIP (5).png"
+        }, {
+            idNum: 11,
+            isPreferred: true,
+            isHot: true,
+            isBestSeller: true,
+            productName: "Nulo Freestyle Beef Flavor Dog Food",
+            imageLink: "assets/images/favourites/PNG/OIP (6).png"
+        }, {
+            idNum: 12,
+            isPreferred: true,
+            isHot: true,
+            isBestSeller: true,
+            productName: "Hypro Dog Food Ocen Fish Flavor",
+            imageLink: "assets/images/favourites/PNG/OIP (7).png"
+        }, {
+            idNum: 13,
+            isPreferred: true,
+            isHot: true,
+            isBestSeller: true,
+            productName: "N&D Dog Food",
+            imageLink: "assets/images/favourites/PNG/OIP (8).png"
+        }, {
+            idNum: 14,
+            isPreferred: true,
+            isHot: true,
+            isBestSeller: true,
+            productName: "NuTripe Ocean Fish and Green Tripe Formula Dog Food",
+            imageLink: "assets/images/favourites/PNG/OIP (9).png"
+        }, {
+            idNum: 15,
+            isPreferred: true,
+            isHot: true,
+            isBestSeller: true,
+            productName: "Blue Wilderness Nature's Cat Food",
+            imageLink: "assets/images/favourites/PNG/OIP (10).png"
+        }, {
+            idNum: 16,
+            isPreferred: true,
+            isHot: true,
+            isBestSeller: true,
+            productName: "Hills Science Diet Cat Food",
+            imageLink: "assets/images/favourites/PNG/OIP (11).png"
+        },  {
+            idNum: 17,
+            isPreferred: true,
+            isHot: true,
+            isBestSeller: true,
+            productName: "Special Cat Food Chicken and Turkey Flavor",
+            imageLink: "assets/images/favourites/PNG/OIP (13).png"
+        },  {
+            idNum: 18,
+            isPreferred: true,
+            isHot: true,
+            isBestSeller: true,
+            productName: "Help3",
+            imageLink: "assets/images/favourites/PNG/OIP (4).png"
+        },  {
+            idNum: 19,
+            isPreferred: true,
+            isHot: true,
+            isBestSeller: true,
+            productName: "Tomi Canned Dog Food",
+            imageLink: "assets/images/favourites/PNG/OIP (3).png"
+        },  {
+            idNum: 20,
+            isPreferred: true,
+            isHot: true,
+            isBestSeller: true,
+            productName: "Weebox Adult Dog Food",
+            imageLink: "assets/images/favourites/PNG/OIP (2).png"
+        },  {
+            idNum: 21,
+            isPreferred: true,
+            isHot: true,
+            isBestSeller: true,
+            productName: "Drools Dog Food",
+            imageLink: "assets/images/favourites/PNG/OIP (1).png"
+        },  {
+            idNum: 22,
+            isPreferred: true,
+            isHot: true,
+            isBestSeller: true,
+            productName: "Pedigree Vital",
+            imageLink: "assets/images/favourites/PNG/OIP.png"
+        }
+        ];
+
+        
+        const table = document.getElementById("itemsTable")
+
+            
+        for (let i = 0; i < products.length; i++) {
+            const div = document.createElement("div");
+
+            div.className = "divTable";
+
+            div.style.width = "239px";
+            div.style.height = "334px";
+            div.style.borderRadius = "16px";
+
+            div.style.backgroundColor = "#E5E5E5";
+
+
+            div.style.marginBottom = "41px";
+            div.style.textAlign = "center";
+
+            
+            div.style.position = "relative";
+
+
+
+
+
+
+
+            const whiteContainer = document.createElement("div");
+            whiteContainer.style.width = "239px";
+            whiteContainer.style.height = "249px";
+
+            whiteContainer.style.borderBottomRightRadius = "38px";
+            whiteContainer.style.borderBottomLeftRadius = "38px";
+            whiteContainer.style.borderTopRightRadius = "16px";
+            whiteContainer.style.borderTopLeftRadius = "16px";
+            
+            whiteContainer.style.backgroundColor = "white";
+
+
+
+
+
+
+            const bestSellerLogo = document.createElement("img");
+
+            bestSellerLogo.src = "assets/logo/62-621158_bestseller-5a1f4b10-e971-11e7-abe0-5b1ea13cdded-sales.png"
+            
+            bestSellerLogo.style.position = "absolute";
+            bestSellerLogo.style.width = "120px";
+            bestSellerLogo.style.height = "120px";
+            
+            bestSellerLogo.style.zIndex = "999";
+            bestSellerLogo.style.top = "0px";
+            bestSellerLogo.style.left = "0px";
+
+
+        
+
+
+
+
+            const image = document.createElement("img");
+            image.src = products[i]["imageLink"];
+
+            image.style.width = "165px";
+            image.style.height = "165px";
+            image.style.position = "relative";
+            image.style.top = "40px";
+
+
+
+
+            const text = document.createElement("p");
+            text.textContent = products[i]["productName"];
+
+            text.style.fontFamily = "Poppins";
+
+            text.style.width = "165px";
+            text.style.height = "24px";
+
+            text.style.top = "245px";
+            text.style.left = "38px";
+            
+
+            
+            text.style.position = "absolute";
+
+            table.appendChild(div);
+            div.appendChild(whiteContainer);
+            if (products[i]["isBestSeller"] == true) {
+                whiteContainer.appendChild(bestSellerLogo);
+            }
+            whiteContainer.appendChild(image);
+            div.appendChild(text);
+
+
+            
+
+        }
+
+
+
+
+        </script>
+        
+    </body>
+</html>
+
