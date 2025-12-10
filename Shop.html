@@ -1,194 +1,32 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>PawHub</title>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
-        <!--<link rel="stylesheet" href="style.css">-->
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <script src="script.js" defer></script>
-        
-        <style>
-            
-        
 
+<head>
+    <title>PawHub - Favourites</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <script src="script.js" defer></script>
 
-        footer {
-                background-color: #e46885; /* The darker pink from your buttons */
-                color: white;
-
-                width: 8000px;
-                height: 360px;
-                
-                position: absolute;
-
-                top: 2773px;
-                left: -50px;
-
-                padding: 60px 0px 20px 0;
-                margin-top: 120px; /* Space between last card and footer */
-        }
-
-         .footer-content {
-                max-width: 1200px;
-                /* margin: 0 auto; */
-
-                padding-top: -40px;
-                padding-left: 220px;
-                
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                gap: 40px;
-        }  
-
-        .footer-col h4 {
-                font-size: 22px;
-                margin-bottom: 20px;
-                font-weight: 700;
-                color: #fff;
-        }
-
-        .footer-col p {
-                font-size: 14px;
-                font-weight: 300;
-                line-height: 1.8;
-                margin-bottom: 20px;
-                color: rgba(255, 255, 255, 0.9);
-        }
-
-        .footer-links ul {
-                list-style: none;
-                padding: 0;
-                margin: 0;
-        }
-
-        .footer-links li {
-                margin-bottom: 12px;
-        }
-
-        .footer-links a {
-                text-decoration: none;
-                color: rgba(255, 255, 255, 0.9);
-                font-weight: 400;
-                transition: padding-left 0.3s;
-        }
-
-        .footer-links a:hover {
-                padding-left: 8px; /* Slide effect on hover */
-                color: white;
-                text-decoration: underline;
-        }
-
-            /* Newsletter Input Style to match your Hero Button */
-        .newsletter-box {
-                display: flex;
-                gap: 10px;
-                margin-top: 15px;
-        }
-
-        .newsletter-box input {
-                width: 100%;
-                padding: 12px 15px;
-                border-radius: 50px;
-                border: none;
-                outline: none;
-                font-family: "Poppins", sans-serif;
-        }
-
-        .newsletter-box button {
-                background-color: #333;
-                color: white;
-                border: none;
-                padding: 12px 20px;
-                border-radius: 50px;
-                cursor: pointer;
-                font-weight: 600;
-                transition: background 0.3s;
-        }
-
-        .newsletter-box button:hover {
-                background-color: #555;
-        }
-
-        .footer-bottom {
-                /* text-align: center; */
-
-                margin-top: 60px;
-                padding-top: 10px;
-                border-top: 1px solid rgba(255, 255, 255, 0.2);
-                font-size: 14px;
-                font-weight: 300;
-        }
-
-
-
-
-        a {
-            text-decoration: none;
-            color: inherit;
-            
-            position: relative;
-            top: 15px;
-            left: 0;
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         
         body {
-        
-            box-sizing: border-box;
-            overflow-x: hidden;
-
-                    
-        
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(180deg, #FFB6C1 0%, #FFC0CB 100%);
             min-height: 100vh;
-        
+            overflow-x: hidden;
         }
-
-
-
-
-
-
-        hr {
-            position: relative;
-            top: 1000px;
-
-
-            display: block;
-            
-            margin-top: 0.5em;
-            margin-bottom: 0.5em;
-            margin-left: auto;
-            margin-right: auto;
-            border-style: inset;
-            border-width: 1px;
-        }
-
-
-
-
-
-
-
-
-  /* Header */
+        /*Navigation*/
         
         header {
             background: rgba(255, 255, 255, 0.3);
-
-
             padding: 20px 40px;
-            
-
-            position: absolute;
-            width: 8000px;
-            height: 37.5px;
-
-            top: 0px;
-
-            margin-left: -10px;
-            /* display: flex; */
+            display: flex;
             justify-content: space-between;
             align-items: center;
             backdrop-filter: blur(10px);
@@ -198,12 +36,6 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            
-            position: absolute;
-
-            top: 20px;
-            left: 42px;
-
             font-size: 24px;
             font-weight: bold;
             color: #E91E63;
@@ -218,11 +50,6 @@
         nav {
             display: flex;
             gap: 30px;
-
-            position:absolute;
-
-            left: 969px;
-            top: 13px;
         }
         
         nav a {
@@ -230,193 +57,354 @@
             color: #666;
             font-weight: 500;
             transition: color 0.3s;
+            font-size: 16px;
         }
         
         nav a:hover,
         nav a.active {
             color: #E91E63;
         }
-
-
-
-
-
-
-
-
-
-        #shopBody {
-            background: linear-gradient(180deg, #FFB6C1 0%, #FFC0CB 100%);
-            position: absolute;
-            
-            text-align: center;
-            top: 0px;
-            left: 0px;
-            
-            font-family: "Poppins", sans-serif;
-
-            width: 8000px;
-            height: 3140px;
-        }
-        #shopBodyMotto {
-            position: absolute;
-            width: 788px;
-            height: 131px;
-
-            top: 139px;
-            left: 370px;
-
-            text-align: center;
-        }
-        #itemsTable {
-            background-color: #F8C6D0;
-
-            
-            display: grid;
-
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(4, 1fr);
-             
-
-            
-            position: absolute;
-            margin: 0px;
-            
-            border-radius: 41px;
-            
-            top: 385px;
-            left: 145px;
-            width: 1138px;
-            height: auto;
-            
-            padding-left: 43px;
-            padding-top: 47px;
-            padding-right: 43px;
-            padding-bottom: 47px;
-
-            justify-items: center;
-            /* align-items: center; */
-
-            justify-content: space-evenly;
-            align-content: space-evenly;
-
-
-            
-        }
-
-        .itemsDiv {
-
-            background-color: white;
-
-            width: 239px;
-            height: 374px;     
-            
-            border-radius: 41px;
-
-            margin-bottom: 41px;
-
-        }
-
-
-
-
-
-
-
-        </style>
-    </head>
-
-
-
-
-
-
-
-
-    <body>
-
+        /* --- SHOP STYLES --- */
         
-
-
-        <div id="shopBody">
-            <div id="shopBodyMotto">
-
-                <p style="font-size: 70px;
+        #shopBody {
+            text-align: center;
+            width: 100%;
+            min-height: calc(100vh - 120px);
+            padding: 20px 0;
+            position: relative;
+        }
+        
+        #shopBodyMotto {
+            width: 100%;
+            max-width: 1200px;
+            margin: -10px auto 40px auto;
+            padding: 30px 10px 10px;
+            text-align: center;
+        }
+        
+        #shopBodyMotto h1 {
+            font-size: 64px;
             color: rgba(233, 30, 99, 0.3);
             font-weight: bold;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); position: absolute; margin: 0px; top: 0px; left: 0px; width: 788px;height: 75px;font-size: 64px; font-weight: bold;">Everything They Love</p>
-                <p style="color: #666;position: absolute; margin:0px;top: 95px; left:61px; width: 665px; height: 30px; font-size: 24px; font-weight: light;">Pet Essentials that your pet might want</p>            
-                
-            </div>
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            line-height: 1.2;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        #shopBodyMotto p {
+            color: #666;
+            font-size: 24px;
+            font-weight: 300;
+            margin-top: 20px;
+        }
+        /* Items Grid */
+        
+        #itemsTable {
+            background-color: #F8C6D0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            margin: 0 auto;
+            border-radius: 41px;
+            width: 90%;
+            max-width: 1200px;
+            padding: 40px;
+            gap: 30px;
+            overflow: visible;
+        }
+        /* Card Styles*/
+        
+        .product-card {
+            background-color: transparent;
+            border-radius: 41px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 374px;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            overflow: visible;
+        }
+        
+        .product-image-container {
+            width: 100%;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            border-radius: 41px 41px 0 0;
+            padding: 20px;
+            margin-bottom: 0;
+        }
+        
+        .product-image {
+            max-width: 180px;
+            max-height: 180px;
+            object-fit: contain;
+        }
+        
+        .bestseller-badge {
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            width: 100px;
+            height: auto;
+            z-index: 100;
+            pointer-events: none;
+        }
+        
+        .product-name {
+            width: 100%;
+            flex-grow: 1;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            color: #333;
+            text-align: center;
+            background-color: #E0E0E0;
+            border-radius: 0 0 41px 41px;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 0;
+        }
+        
+        .visit-info {
+            color: #666;
+            font-size: 16px;
+            text-align: center;
+            width: 100%;
+            padding: 30px 20px 60px 20px;
+            margin-top: 40px;
+            background: transparent;
+        }
+        /* Footer Styles*/
+        
+        footer {
+            background-color: #e46885;
+            color: white;
+            padding: 60px 0 20px 0;
+            width: 100%;
+            position: relative;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        
+        .footer-col h4 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: #fff;
+        }
+        
+        .footer-col p {
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 400;
+            transition: all 0.3s;
+        }
+        
+        .footer-links a:hover {
+            padding-left: 8px;
+            color: white;
+            text-decoration: underline;
+        }
+        
+        .newsletter-box {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .newsletter-box input {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 50px;
+            border: none;
+            outline: none;
+            font-family: inherit;
+        }
+        
+        .newsletter-box button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+            white-space: nowrap;
+        }
+        
+        .newsletter-box button:hover {
+            background-color: #555;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 14px;
+            font-weight: 300;
+            width: 100%;
+        }
+        /* Responsive Design */
+        
+        @media (max-width: 1024px) {
+            #itemsTable {
+                grid-template-columns: repeat(3, 1fr);
+                padding: 30px;
+                gap: 20px;
+            }
+            #shopBodyMotto h1 {
+                font-size: 48px;
+            }
+            #shopBodyMotto p {
+                font-size: 20px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            #itemsTable {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 20px;
+                gap: 15px;
+            }
+            #shopBodyMotto h1 {
+                font-size: 36px;
+            }
+            #shopBodyMotto p {
+                font-size: 18px;
+            }
+            nav {
+                gap: 15px;
+                font-size: 14px;
+            }
+            .product-card {
+                min-height: 350px;
+            }
+            .product-image-container {
+                height: 200px;
+            }
+            header {
+                padding: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            #itemsTable {
+                grid-template-columns: 1fr;
+                padding: 15px;
+            }
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .newsletter-box {
+                flex-direction: column;
+            }
+            .newsletter-box button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
 
-            <div id="itemsTable">
-
-                <p style="width: 500px; height: 100px; position:absolute; top: 2380px; font-size: 16px; font-family: 'Poppins', sans-serif;">For purchase, you can visit the nearby PawHub brances for the product.</p>
-            </div>
-
-
-    
-        </div>
-
-
-  
-
+<body>
     <header>
         <a href="index.html" class="logo">PawHub</a>
         <nav>
-            <a href="index.html">Home</a>     <!-- Done -->
-            <a href="Adoption_Page.html">Adopt</a> <!-- Done -->
-            <a href="",  class="active">Favourites</a>   <!-- Done -->
+            <a href="index.html">Home</a>
+            <a href="Adoption_Page.html">Adopt</a>
+            <a href="Shop.html" class="active">Favourites</a>
             <a href="blog.html">Blog</a>
             <a href="get-involved.html">Get Involved</a>
             <a href="about_us.html">About Us</a>
         </nav>
     </header>
-        
-        
 
-        <footer>
-            <div class="footer-content">
-                <div class="footer-col">
-                    <h4>PawHub</h4>
-                    <p>
-                        We believe every pet deserves a loving home. Join our community and find your new best friend today.
-                    </p>
-                </div>
+    <div id="shopBody">
+        <div id="shopBodyMotto">
+            <h1>Everything They Love</h1>
+            <p>Pet Essentials that your pet might want</p>
+        </div>
 
-                <div class="footer-col footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li> <!-- Done -->
-                        <li><a href="Adoption_Page.html">Adopt a Pet</a></li><!-- Done -->
-                        <li><a href="blog.html">Care Guides</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="get-involved.html">Volunteer</a></li>
-                    </ul>
-                </div>
+        <div id="itemsTable">
+            <!-- Products will be inserted here by JavaScript -->
+        </div>
 
-                <div class="footer-col">
-                    <h4>Stay Updated</h4>
-                    <p>
-                        Get the latest adoption tips and cute pet photos delivered to your inbox.
-                    </p>
-                    <div class="newsletter-box">
-                        <input type="email" placeholder="Enter your email" />
-                        <button>Go</button>
-                    </div>
+        <div class="visit-info">
+            For purchase, you can visit the nearby PawHub branches for the product.
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>PawHub</h4>
+                <p>
+                    We believe every pet deserves a loving home. Join our community and find your new best friend today.
+                </p>
+            </div>
+
+            <div class="footer-col footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Adoption_Page.html">Adopt a Pet</a></li>
+                    <li><a href="blog.html">Care Guides</a></li>
+                    <li><a href="about_us.html">About Us</a></li>
+                    <li><a href="get-involved.html">Volunteer</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Stay Updated</h4>
+                <p>
+                    Get the latest adoption tips and cute pet photos delivered to your inbox.
+                </p>
+                <div class="newsletter-box">
+                    <input type="email" placeholder="Enter your email" />
+                    <button>Subscribe</button>
                 </div>
             </div>
-            <div class="footer-bottom">
-            <p style="position: absolute; left: 640px;">&copy; 2025 PawHub. All Rights Reserved. | Designed with Love.</p>
-            </div>
-        </footer>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 PawHub. All Rights Reserved. | Designed with Love.</p>
+        </div>
+    </footer>
 
-
-
-        <script>
-
-
+    <script>
         const products = [{
             idNum: 1,
             isPreferred: true,
@@ -529,157 +517,91 @@
             isBestSeller: true,
             productName: "Hills Science Diet Cat Food",
             imageLink: "assets/images/favourites/PNG/OIP (11).png"
-        },  {
+        }, {
             idNum: 17,
             isPreferred: true,
             isHot: true,
             isBestSeller: true,
             productName: "Special Cat Food Chicken and Turkey Flavor",
             imageLink: "assets/images/favourites/PNG/OIP (13).png"
-        },  {
+        }, {
             idNum: 18,
             isPreferred: true,
             isHot: true,
             isBestSeller: true,
             productName: "Help3",
             imageLink: "assets/images/favourites/PNG/OIP (4).png"
-        },  {
+        }, {
             idNum: 19,
             isPreferred: true,
             isHot: true,
             isBestSeller: true,
             productName: "Tomi Canned Dog Food",
             imageLink: "assets/images/favourites/PNG/OIP (3).png"
-        },  {
+        }, {
             idNum: 20,
             isPreferred: true,
             isHot: true,
             isBestSeller: true,
             productName: "Weebox Adult Dog Food",
             imageLink: "assets/images/favourites/PNG/OIP (2).png"
-        },  {
+        }, {
             idNum: 21,
             isPreferred: true,
             isHot: true,
             isBestSeller: true,
             productName: "Drools Dog Food",
             imageLink: "assets/images/favourites/PNG/OIP (1).png"
-        },  {
+        }, {
             idNum: 22,
             isPreferred: true,
             isHot: true,
             isBestSeller: true,
             productName: "Pedigree Vital",
             imageLink: "assets/images/favourites/PNG/OIP.png"
-        }
-        ];
+        }];
 
-        
-        const table = document.getElementById("itemsTable")
+        const table = document.getElementById("itemsTable");
 
-            
-        for (let i = 0; i < products.length; i++) {
-            const div = document.createElement("div");
+        products.forEach(product => {
+            // Create product card
+            const card = document.createElement("div");
+            card.className = "product-card";
 
-            div.className = "divTable";
+            // Create image container
+            const imageContainer = document.createElement("div");
+            imageContainer.className = "product-image-container";
 
-            div.style.width = "239px";
-            div.style.height = "334px";
-            div.style.borderRadius = "16px";
-
-            div.style.backgroundColor = "#E5E5E5";
-
-
-            div.style.marginBottom = "41px";
-            div.style.textAlign = "center";
-
-            
-            div.style.position = "relative";
-
-
-
-
-
-
-
-            const whiteContainer = document.createElement("div");
-            whiteContainer.style.width = "239px";
-            whiteContainer.style.height = "249px";
-
-            whiteContainer.style.borderBottomRightRadius = "38px";
-            whiteContainer.style.borderBottomLeftRadius = "38px";
-            whiteContainer.style.borderTopRightRadius = "16px";
-            whiteContainer.style.borderTopLeftRadius = "16px";
-            
-            whiteContainer.style.backgroundColor = "white";
-
-
-
-
-
-
-            const bestSellerLogo = document.createElement("img");
-
-            bestSellerLogo.src = "assets/logo/62-621158_bestseller-5a1f4b10-e971-11e7-abe0-5b1ea13cdded-sales.png"
-            
-            bestSellerLogo.style.position = "absolute";
-            bestSellerLogo.style.width = "120px";
-            bestSellerLogo.style.height = "120px";
-            
-            bestSellerLogo.style.zIndex = "999";
-            bestSellerLogo.style.top = "0px";
-            bestSellerLogo.style.left = "0px";
-
-
-        
-
-
-
-
+            // Create product image
             const image = document.createElement("img");
-            image.src = products[i]["imageLink"];
+            image.src = product.imageLink;
+            image.alt = product.productName;
+            image.className = "product-image";
 
-            image.style.width = "165px";
-            image.style.height = "165px";
-            image.style.position = "relative";
-            image.style.top = "40px";
+            // Create product name
+            const name = document.createElement("div");
+            name.className = "product-name";
+            name.textContent = product.productName;
 
-
-
-
-            const text = document.createElement("p");
-            text.textContent = products[i]["productName"];
-
-            text.style.fontFamily = "Poppins";
-
-            text.style.width = "165px";
-            text.style.height = "24px";
-
-            text.style.top = "245px";
-            text.style.left = "38px";
-            
-
-            
-            text.style.position = "absolute";
-
-            table.appendChild(div);
-            div.appendChild(whiteContainer);
-            if (products[i]["isBestSeller"] == true) {
-                whiteContainer.appendChild(bestSellerLogo);
+            // Add bestseller badge if needed
+            if (product.isBestSeller) {
+                const badge = document.createElement("img");
+                // Ensure this path matches your "best seller" ribbon image
+                badge.src = "assets/logo/62-621158_bestseller-5a1f4b10-e971-11e7-abe0-5b1ea13cdded-sales.png";
+                badge.alt = "Bestseller";
+                badge.className = "bestseller-badge";
+                card.appendChild(badge); // Badge is appended to the relative card
             }
-            whiteContainer.appendChild(image);
-            div.appendChild(text);
 
+            // Assemble the card
+            imageContainer.appendChild(image);
+            card.appendChild(imageContainer);
+            card.appendChild(name);
 
-            
+            // Add to table
+            table.appendChild(card);
+        });
+    </script>
+</body>
 
-        }
-
-
-
-
-        </script>
-        
-    </body>
 </html>
-

@@ -1,384 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PawHub | Pet Adoption Blog</title>
 
     <style>
-      /* --- IMPORT FONTS --- */
-      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
-
-      /* --- BASIC STYLES --- */
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-
-      body {
-        background: linear-gradient(180deg, #FFB6C1 0%, #FFC0CB 100%);
-        margin: 0;
-        padding: 0;
-        font-family: "Poppins", sans-serif; 
-        color: #333;
-        line-height: 1.6;
-      }
-
-      /* --- HEADER STYLES --- */
-      /* header {
-        background-color: #f4a7b9;
-        height: 54px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 40px;
-      } */
-
-      header h1 {
-        font-weight: 700;
-        font-size: 20px;
-        line-height: 100%;
-        color: #e46885;
-        margin: 0;
-      }
-
-      .nav-buttons button {
-        background: transparent;
-        border: none;
-        color: #e46885;
-        font-weight: 600;
-        font-size: 16px;
-        cursor: pointer;
-        margin-left: 20px;
-        transition: color 0.3s;
-      }
-
-      .nav-buttons button:hover {
-        color: #E91E63;
-      }
-
-     
-      .hero-section {
-        max-width: 1000px;
-        margin: 60px auto 40px auto;
-        background: url("assets/videos/vids-20251203T165122Z-1-001/img-vids/vids/cat-dog.gif");
-        background-size: cover;
-        background-position: center;
-        border-radius: 20px;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-        text-align: center;
-        color:white;
-        padding: 100px 20px;
+        /* --- IMPORT FONTS --- */
         
-        position: relative;
-
-        top: 40px;
-      }
-
-      .hero-content {
-        max-width: 700px;
-        margin: 0 auto;
-      }
-
-      .hero-content h2 {
-        font-weight: 700;
-        font-size: 52px;
-        line-height: 1.1;
-        color: #e46885;
-        margin-bottom: 25px;
-      }
-
-      .hero-content p {
-        font-weight: 300;
-        font-size: 20px;
-        color: #d14d6e; 
-        margin-bottom: 40px;
-      }
-
-      .hero-btn {
-        background-color: #e46885;
-        color: white;
-        border: none;
-        padding: 16px 40px;
-        border-radius: 50px;
-        font-size: 18px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: background 0.3s, transform 0.2s;
-        box-shadow: 0 4px 10px rgba(228, 104, 133, 0.3);
-      }
-
-      .hero-btn:hover {
-        background-color: #d14d6e;
-      }
-
-      /* --- GRID LAYOUT --- */
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 50px 20px 60px 20px;
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+        /* --- BASIC STYLES --- */
         
-      }
-      .blog-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 30px;
-      }
-
-      /* --- CARD STYLES --- */
-      .card {
-        background: white;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-        cursor: pointer;
-        border: 1px solid #eee;
-        transition: transform 0.5s;
-      }
-      .card:hover {
-        transform: translateY(-5px);
-      }
-      .card-image {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-      }
-      .card-content {
-        padding: 20px;
-      }
-      .category-tag {
-        background: #fff7ed;
-        color: #f97316;
-        padding: 4px 10px;
-        border-radius: 20px;
-        font-size: 12px;
-        font-weight: bold;
-        text-transform: uppercase;
-      }
-      .card-title {
-        margin: 10px 0;
-        font-size: 20px;
-        font-weight: bold;
-      }
-      .card-summary {
-        font-size: 14px;
-        color: #718096;
-      }
-
-      /* --- MODAL STYLES --- */
-      .modal-overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.7);
-        z-index: 1000;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
-      }
-
-      .modal-overlay.show {
-        display: flex;
-      }
-
-      .modal-container {
-        background: white;
-        width: 100%;
-        max-width: 800px;
-        max-height: 90vh;
-        border-radius: 12px;
-        overflow-y: auto;
-        position: relative;
-      }
-
-      .close-btn {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        background: rgba(0, 0, 0, 0.5);
-        color: white;
-        border: none;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        cursor: pointer;
-        font-size: 20px;
-      }
-
-      .modal-header-img {
-        width: 100%;
-        height: 300px;
-        object-fit: cover;
-      }
-      .modal-body {
-        padding: 40px;
-      }
-      .modal-title {
-        font-size: 32px;
-        margin-bottom: 10px;
-      }
-      .modal-author {
-        font-size: 14px;
-        color: #888;
-        margin-bottom: 20px;
-        display: block;
-      }
-
-      /* Modal Text Styles */
-      .modal-body h3 {
-        font-size: 20px;
-        margin-top: 25px;
-        margin-bottom: 10px;
-        color: #333;
-      }
-      .modal-body p {
-        margin-bottom: 15px;
-        color: #555;
-      }
-      .modal-body ul {
-        margin-left: 20px;
-        margin-bottom: 15px;
-        color: #555;
-      }
-      .modal-body li {
-        margin-bottom: 8px;
-      }
-
-      /* --- FOOTER STYLES --- */
-      footer {
-        background-color: #e46885; 
-        color: white;
-        padding: 60px 0 20px 0;
-        margin-top: 80px; 
-      }
-
-      .footer-content {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 40px;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 40px;
-      }
-
-      .footer-col h4 {
-        font-size: 22px;
-        margin-bottom: 20px;
-        font-weight: 700;
-        color: #fff;
-      }
-
-      .footer-col p {
-        font-size: 14px;
-        font-weight: 300;
-        line-height: 1.8;
-        margin-bottom: 20px;
-        color: rgba(255, 255, 255, 0.9);
-      }
-
-      .footer-links ul {
-        list-style: none;
-      }
-
-      .footer-links li {
-        margin-bottom: 12px;
-      }
-
-      .footer-links a {
-        text-decoration: none;
-        color: rgba(255, 255, 255, 0.9);
-        font-weight: 400;
-        transition: padding-left 0.3s;
-      }
-      /* Footer Hover */
-      .footer-links a:hover {
-        padding-left: 8px; 
-        color: white;
-        text-decoration: underline;
-      }
-
-      
-      .newsletter-box {
-        display: flex;
-        gap: 10px;
-        margin-top: 15px;
-      }
-
-      .newsletter-box input {
-        width: 100%;
-        padding: 12px 15px;
-        border-radius: 50px;
-        border: none;
-        outline: none;
-        font-family: "Poppins", sans-serif;
-      }
-
-      .newsletter-box button {
-        background-color: #333;
-        color: white;
-        border: none;
-        padding: 12px 20px;
-        border-radius: 50px;
-        cursor: pointer;
-        font-weight: 600;
-        transition: background 0.3s;
-      }
-
-      .newsletter-box button:hover {
-        background-color: #555;
-      }
-
-      .footer-bottom {
-        text-align: center;
-        margin-top: 60px;
-        padding-top: 20px;
-        border-top: 1px solid rgba(255, 255, 255, 0.2);
-        font-size: 14px;
-        font-weight: 300;
-      }
-
-
-
-      
-
-  /* Header */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /*  BODY SETTINGS */
+        
+        body {
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(180deg, #FFB6C1 0%, #FFC0CB 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        /* HEADER STRUCTURE */
         
         header {
             background: rgba(255, 255, 255, 0.3);
-
-
             padding: 20px 40px;
-            
-
-            position: absolute;
-            width: 8000px;
-            height: 76.5px;
-
-            top: 0px;
-
-            margin-left: -10px;
-            /* display: flex; */
+            display: flex;
             justify-content: space-between;
             align-items: center;
             backdrop-filter: blur(10px);
         }
+        /* LOGO STYLES */
         
         .logo {
             display: flex;
             align-items: center;
             gap: 10px;
-            
-            position: absolute;
-
-
-
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-
             font-size: 24px;
             font-weight: bold;
             color: #E91E63;
@@ -389,19 +51,11 @@
             content: '🐾';
             font-size: 28px;
         }
+        /* NAVIGATION LINKS */
         
         nav {
             display: flex;
             gap: 30px;
-
-
-            position:absolute;
-
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-
-            left: 969px;
-            top: 13px;
         }
         
         nav a {
@@ -409,28 +63,318 @@
             color: #666;
             font-weight: 500;
             transition: color 0.3s;
+            font-size: 16px;
         }
         
         nav a:hover,
         nav a.active {
             color: #E91E63;
         }
-
-
+        /* --- HERO SECTION --- */
+        
+        .hero-section {
+            max-width: 1000px;
+            margin: 40px auto 40px auto;
+            background: url("assets/videos/vids-20251203T165122Z-1-001/img-vids/vids/cat-dog.gif");
+            background-size: cover;
+            background-position: center;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            color: white;
+            padding: 100px 20px;
+            position: relative;
+            font-family: "Poppins", sans-serif;
+        }
+        
+        .hero-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .hero-content h2 {
+            font-weight: 700;
+            font-size: 52px;
+            line-height: 1.1;
+            color: #e46885;
+            margin-bottom: 25px;
+        }
+        
+        .hero-content p {
+            font-weight: 300;
+            font-size: 20px;
+            color: #d14d6e;
+            margin-bottom: 40px;
+        }
+        
+        .hero-btn {
+            background: linear-gradient(135deg, #F48FB1 0%, #E91E63 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+        
+        .hero-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(233, 30, 99, 0.3);
+        }
+        /* --- GRID LAYOUT --- */
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 20px 60px 20px;
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        /* --- CARD STYLES --- */
+        
+        .card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+            border: 1px solid #eee;
+            transition: transform 0.5s;
+            font-family: "Poppins", sans-serif;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .card-content {
+            padding: 20px;
+        }
+        
+        .category-tag {
+            background: #fff7ed;
+            color: #f97316;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        
+        .card-title {
+            margin: 10px 0;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .card-summary {
+            font-size: 14px;
+            color: #718096;
+        }
+        /* --- MODAL STYLES --- */
+        
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            font-family: "Poppins", sans-serif;
+        }
+        
+        .modal-overlay.show {
+            display: flex;
+        }
+        
+        .modal-container {
+            background: white;
+            width: 100%;
+            max-width: 800px;
+            max-height: 90vh;
+            border-radius: 12px;
+            overflow-y: auto;
+            position: relative;
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        
+        .modal-header-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        
+        .modal-body {
+            padding: 40px;
+        }
+        
+        .modal-title {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        .modal-author {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .modal-body h3 {
+            font-size: 20px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .modal-body p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+        
+        .modal-body ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+            color: #555;
+        }
+        
+        .modal-body li {
+            margin-bottom: 8px;
+        }
+        /* --- FOOTER STYLES --- */
+        
+        footer {
+            background-color: #e46885;
+            color: white;
+            padding: 60px 0 20px 0;
+            margin-top: 80px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        
+        .footer-col h4 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: #fff;
+        }
+        
+        .footer-col p {
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 400;
+            transition: padding-left 0.3s;
+        }
+        
+        .footer-links a:hover {
+            padding-left: 8px;
+            color: white;
+            text-decoration: underline;
+        }
+        
+        .newsletter-box {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .newsletter-box input {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 50px;
+            border: none;
+            outline: none;
+            font-family: "Poppins", sans-serif;
+        }
+        
+        .newsletter-box button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .newsletter-box button:hover {
+            background-color: #555;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 14px;
+            font-weight: 300;
+        }
     </style>
-  </head>
-  <body>
-    <!-- Header -->
+</head>
 
+<body>
+    <!-- Header -->
     <header>
-        <a href="index.html" class="logo" style="
-            top: 17px;
-            left: 50px;">PawHub</a>
-        <nav style="top:26px; left: 977.5px;">
-            <a href="index.html">Home</a>     <!-- Done -->
-            <a href="Adoption_Page.html">Adopt</a> <!-- Done -->
-            <a href="Shop.html">Favourites</a>   <!-- Done -->
-            <a href="",  class="active">Blog</a>
+        <a href="index.html" class="logo">PawHub</a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="Adoption_Page.html">Adopt</a>
+            <a href="Shop.html">Favourites</a>
+            <a href="" class="active">Blog</a>
             <a href="get-involved.html">Get Involved</a>
             <a href="about_us.html">About Us</a>
         </nav>
@@ -438,676 +382,546 @@
 
     <!-- Hero Section -->
     <div class="hero-section">
-      <div class="hero-content">
-        <h2>Find Your New Best Friend</h2>
-        <p>
-          Welcome to PawHub! We believe every pet deserves a loving home. Browse
-          our expert care guides and adoption tips below.
-        </p>
-        <button class="hero-btn"  onclick="window.location.href='Adoption_Page.html';">Start Adopting</button>
-      </div>
+        <div class="hero-content">
+            <h2>Find Your New Best Friend</h2>
+            <p>
+                Welcome to PawHub! We believe every pet deserves a loving home. Browse our expert care guides and adoption tips below.
+            </p>
+            <button class="hero-btn" onclick="window.location.href='Adoption_Page.html';">Start Adopting</button>
+        </div>
     </div>
 
     <!-- blog grid/cards -->
     <div class="container">
-      <div class="blog-grid">
-        <!-- card 1-->
-        <div class="card" onclick="openModal('modal-1')">
-          <img
-            src="assets\images\blogs\cats\cat3.jpg"
-            class="card-image"
-          />
-          <div class="card-content">
-            <span class="category-tag">Cat Care</span>
-            <h3 class="card-title">Caring for Newborn Kittens</h3>
-            <p class="card-summary">
-              Delivering and caring for a new litter can be an overwhelming
-              task. Here are tips to keep them healthy.
-            </p>
-          </div>
-        </div>
+        <div class="blog-grid">
+            <!-- card 1-->
+            <div class="card" onclick="openModal('modal-1')">
+                <img src="assets\images\blogs\cats\cat3.jpg" class="card-image" />
+                <div class="card-content">
+                    <span class="category-tag">Cat Care</span>
+                    <h3 class="card-title">Caring for Newborn Kittens</h3>
+                    <p class="card-summary">
+                        Delivering and caring for a new litter can be an overwhelming task. Here are tips to keep them healthy.
+                    </p>
+                </div>
+            </div>
+            <!-- card 2 -->
+            <div class="card" onclick="openModal('modal-2')">
+                <img src="assets\images\blogs\cats\cat1.jpg" class="card-image" />
+                <div class="card-content">
+                    <span class="category-tag">Dog Breeds</span>
+                    <h3 class="card-title">10 Most Popular Small Breed Dogs</h3>
+                    <p class="card-summary">
+                        From Beagles to Yorkies, discover the most popular small dog breeds and their unique personalities.
+                    </p>
+                </div>
+            </div>
+            <!-- card 3 -->
+            <div class="card" onclick="openModal('modal-3')">
+                <img src="assets\images\blogs\cats\cat4.jpg" class="card-image" />
+                <div class="card-content">
+                    <span class="category-tag">Puppy Growth</span>
+                    <h3 class="card-title">Developmental Milestones: Puppies</h3>
+                    <p class="card-summary">
+                        Your dog just delivered a litter! Here is a quick overview of the milestones in a puppy's life.
+                    </p>
+                </div>
+            </div>
+            <!-- card 4 -->
+            <div class="card" onclick="openModal('modal-4')">
+                <img src="assets\images\blogs/dogs/dog4.jpg" class="card-image" />
+                <div class="card-content">
+                    <span class="category-tag">Kitten Growth</span>
+                    <h3 class="card-title">Developmental Milestones: Kittens</h3>
+                    <p class="card-summary">
+                        Kittens seem so helpless at first. When can you expect them to see, hear, and walk?
+                    </p>
+                </div>
+            </div>
+            <!-- card 5 -->
+            <div class="card" onclick="openModal('modal-5')">
+                <img src="assets\images\blogs/cats/cat5.jpg" class="card-image" />
+                <div class="card-content">
+                    <span class="category-tag">Cat Care</span>
+                    <h3 class="card-title">Keeping Your Senior Cat Healthy</h3>
+                    <p class="card-summary">
+                        As your cat enters their golden years, their needs change. From diet adjustments to comfort tips, learn how to support your feline friend's health and happiness.
+                    </p>
+                </div>
+            </div>
+            <!-- card 6 -->
+            <div class="card" onclick="openModal('modal-6')">
+                <img src="assets\images\blogs/dogs/dog5.jpg" class="card-image" />
+                <div class="card-content">
+                    <span class="category-tag">Dog Care</span>
+                    <h3 class="card-title">Are You Ready For A Dog?</h3>
+                    <p class="card-summary">
+                        Responsible ownership is a full-time job. From costs to dog-proofing, here is a checklist of everything you need to consider before bringing a new pet home.
+                    </p>
+                </div>
+            </div>
 
-        <!-- card 2 -->
-        <div class="card" onclick="openModal('modal-2')">
-          <img
-            src="assets\images\blogs\cats\cat1.jpg"
-            class="card-image"
-          />
-          <div class="card-content">
-            <span class="category-tag">Dog Breeds</span>
-            <h3 class="card-title">10 Most Popular Small Breed Dogs</h3>
-            <p class="card-summary">
-              From Beagles to Yorkies, discover the most popular small dog
-              breeds and their unique personalities.
-            </p>
-          </div>
         </div>
-
-        <!-- card 3 -->
-        <div class="card" onclick="openModal('modal-3')">
-          <img
-            src="assets\images\blogs\cats\cat4.jpg"
-            class="card-image"
-          />
-          <div class="card-content">
-            <span class="category-tag">Puppy Growth</span>
-            <h3 class="card-title">Developmental Milestones: Puppies</h3>
-            <p class="card-summary">
-              Your dog just delivered a litter! Here is a quick overview of the
-              milestones in a puppy's life.
-            </p>
-          </div>
-        </div>
-
-        <!-- card 4 -->
-        <div class="card" onclick="openModal('modal-4')">
-          <img
-            src="assets\images\blogs/dogs/dog4.jpg"
-            class="card-image"
-          />
-          <div class="card-content">
-            <span class="category-tag">Kitten Growth</span>
-            <h3 class="card-title">Developmental Milestones: Kittens</h3>
-            <p class="card-summary">
-              Kittens seem so helpless at first. When can you expect them to
-              see, hear, and walk?
-            </p>
-          </div>
-        </div>
-
-        <!-- card 5 -->
-        <div class="card" onclick="openModal('modal-5')">
-          <img
-            src="assets\images\blogs/cats/cat5.jpg"
-            class="card-image"
-          />
-          <div class="card-content">
-            <span class="category-tag">Cat Care</span>
-            <h3 class="card-title">Keeping Your Senior Cat Healthy</h3>
-            <p class="card-summary">
-              As your cat enters their golden years, their needs change. 
-              From diet adjustments to comfort tips, learn how to support your feline friend's health and happiness.
-            </p>
-          </div>
-        </div>
-
-        <!-- card 6 -->
-        <div class="card" onclick="openModal('modal-6')">
-          <img
-            src="assets\images\blogs/dogs/dog5.jpg"
-            class="card-image"
-          />
-          <div class="card-content">
-            <span class="category-tag">Dog Care</span>
-            <h3 class="card-title">Are You Ready For A Dog?</h3>
-            <p class="card-summary">
-            Responsible ownership is a full-time job. From costs to dog-proofing, here is a checklist of everything you need to consider before bringing a new pet home.
-            </p>
-          </div>
-        </div>
-
-      </div>
     </div>
-
-   
-
     <!-- 1st MODAL -->
     <div id="modal-1" class="modal-overlay">
-      <div class="modal-container">
-        <button class="close-btn" onclick="closeModal('modal-1')">X</button>
-        <img
-          src="assets\images\blogs/cats/cat3.jpg"
-          class="modal-header-img"
-        />
-        <div class="modal-body">
-          <h2 class="modal-title">Caring for Newborn Kittens</h2>
-          <span class="modal-author">By PetPlace Veterinarians</span>
-          <p>
-            Delivering and caring for a new litter can be an overwhelming task
-            for any mother. Even though your cat will probably do a great job
-            caring for her babies, there are some things you can do to help
-            maintain a litter and keep them healthy.
-          </p>
+        <div class="modal-container">
+            <button class="close-btn" onclick="closeModal('modal-1')">X</button>
+            <img src="assets\images\blogs/cats/cat3.jpg" class="modal-header-img" />
+            <div class="modal-body">
+                <h2 class="modal-title">Caring for Newborn Kittens</h2>
+                <span class="modal-author">By PetPlace Veterinarians</span>
+                <p>
+                    Delivering and caring for a new litter can be an overwhelming task for any mother. Even though your cat will probably do a great job caring for her babies, there are some things you can do to help maintain a litter and keep them healthy.
+                </p>
 
-          <h3>Warm Environment</h3>
-          <p>
-            In the first few weeks of life, kittens are unable to maintain their
-            body temperature. Usually, they snuggle up to their mother to
-            provide heat support. You can assist by keeping the queening box in
-            an 85 to 90 degree Fahrenheit environment for the first 5 days of
-            life. Electric bulbs suspended far away from curious noses or
-            heating pads work well. From day 5 to 10, slowly reduce the
-            temperature to around 80 degrees.
-          </p>
+                <h3>Warm Environment</h3>
+                <p>
+                    In the first few weeks of life, kittens are unable to maintain their body temperature. Usually, they snuggle up to their mother to provide heat support. You can assist by keeping the queening box in an 85 to 90 degree Fahrenheit environment for the first
+                    5 days of life. Electric bulbs suspended far away from curious noses or heating pads work well. From day 5 to 10, slowly reduce the temperature to around 80 degrees.
+                </p>
 
-          <h3>Clean Environment</h3>
-          <p>
-            The queening box needs to be cleaned every day. Use newspapers or
-            easily laundered towels or blankets. Change the bedding daily. The
-            mother will try to keep the area clean, but with a large litter, she
-            might need your help.
-          </p>
+                <h3>Clean Environment</h3>
+                <p>
+                    The queening box needs to be cleaned every day. Use newspapers or easily laundered towels or blankets. Change the bedding daily. The mother will try to keep the area clean, but with a large litter, she might need your help.
+                </p>
 
-          <h3>Healthy Environment</h3>
-          <p>
-            Making sure the babies are healthy and growing can be difficult
-            unless they are frequently monitored. During the first few weeks,
-            weigh each baby once a day. Record their weights and make certain
-            that each baby is steadily gaining weight.
-          </p>
+                <h3>Healthy Environment</h3>
+                <p>
+                    Making sure the babies are healthy and growing can be difficult unless they are frequently monitored. During the first few weeks, weigh each baby once a day. Record their weights and make certain that each baby is steadily gaining weight.
+                </p>
 
-          <h3>Signs of Problems</h3>
-          <p>
-            Through daily monitoring, illness can be detected early. Any kitten
-            losing weight or constantly crying needs medical attention. If the
-            mother is neglecting babies, you may have to hand raise them.
-          </p>
+                <h3>Signs of Problems</h3>
+                <p>
+                    Through daily monitoring, illness can be detected early. Any kitten losing weight or constantly crying needs medical attention. If the mother is neglecting babies, you may have to hand raise them.
+                </p>
+            </div>
         </div>
-      </div>
     </div>
-
     <!-- 2nd MODAL -->
     <div id="modal-2" class="modal-overlay">
-      <div class="modal-container">
-        <button class="close-btn" onclick="closeModal('modal-2')">X</button>
-        <img
-          src="assets\images\blogs/dogs/dog1.jpg"
-          class="modal-header-img"
-        />
-        <div class="modal-body">
-          <h2 class="modal-title">10 Most Popular Small Breed Dogs</h2>
-          <span class="modal-author">By Dr. Debra Primovic - DVM</span>
+        <div class="modal-container">
+            <button class="close-btn" onclick="closeModal('modal-2')">X</button>
+            <img src="assets\images\blogs/dogs/dog1.jpg" class="modal-header-img" />
+            <div class="modal-body">
+                <h2 class="modal-title">10 Most Popular Small Breed Dogs</h2>
+                <span class="modal-author">By Dr. Debra Primovic - DVM</span>
 
-          <h3>Beagles</h3>
-          <p>
-            Since the 1950s, the beagle has consistently ranked as one of the
-            top 10 most popular breeds in the United States. This perpetual
-            favorite is a vigorous rabbit hunter known for being a favorite
-            companion.
-          </p>
+                <h3>Beagles</h3>
+                <p>
+                    Since the 1950s, the beagle has consistently ranked as one of the top 10 most popular breeds in the United States. This perpetual favorite is a vigorous rabbit hunter known for being a favorite companion.
+                </p>
 
-          <h3>Yorkshire Terriers</h3>
-          <p>
-            Affectionately known as "Yorkies," the Yorkshire terrier is
-            well-known for its long beautiful hair and earns its reputation as a
-            tiny but hardy breed.
-          </p>
+                <h3>Yorkshire Terriers</h3>
+                <p>
+                    Affectionately known as "Yorkies," the Yorkshire terrier is well-known for its long beautiful hair and earns its reputation as a tiny but hardy breed.
+                </p>
 
-          <h3>Poodles</h3>
-          <p>
-            For centuries, the poodle has been one of the most popular dog
-            breeds in the world and reigns as a symbol of elegance and luxury.
-            The toy poodle stands under 10 inches at the shoulder.
-          </p>
+                <h3>Poodles</h3>
+                <p>
+                    For centuries, the poodle has been one of the most popular dog breeds in the world and reigns as a symbol of elegance and luxury. The toy poodle stands under 10 inches at the shoulder.
+                </p>
 
-          <h3>French Bulldogs</h3>
-          <p>
-            "Frenchies," with their distinctive bat-like ears and roly-poly
-            bodies, are a compact, tough, and adorable little breed of dog. They
-            have been treasured family companions for years.
-          </p>
+                <h3>French Bulldogs</h3>
+                <p>
+                    "Frenchies," with their distinctive bat-like ears and roly-poly bodies, are a compact, tough, and adorable little breed of dog. They have been treasured family companions for years.
+                </p>
 
-          <h3>Dachshund</h3>
-          <p>
-            The much-loved dachshund or "wiener dog" has been in the top 10 of
-            all dog breeds for 30 years. Vocal and affectionate, this is one
-            breed that loves to love its humans.
-          </p>
+                <h3>Dachshund</h3>
+                <p>
+                    The much-loved dachshund or "wiener dog" has been in the top 10 of all dog breeds for 30 years. Vocal and affectionate, this is one breed that loves to love its humans.
+                </p>
 
-          <h3>Miniature Schnauzers</h3>
-          <p>
-            The schnauzer is usually seen in three different sizes. With their
-            classic beard and long eyebrows, its iconic looks are easily
-            recognizable all over the world.
-          </p>
+                <h3>Miniature Schnauzers</h3>
+                <p>
+                    The schnauzer is usually seen in three different sizes. With their classic beard and long eyebrows, its iconic looks are easily recognizable all over the world.
+                </p>
 
-          <h3>Shih Tzu</h3>
-          <p>
-            With a name meaning "lion," this small and sturdy dog has a big
-            heart indeed. The breed is an excellent choice for families with
-            children or the elderly.
-          </p>
+                <h3>Shih Tzu</h3>
+                <p>
+                    With a name meaning "lion," this small and sturdy dog has a big heart indeed. The breed is an excellent choice for families with children or the elderly.
+                </p>
+            </div>
         </div>
-      </div>
     </div>
-
     <!-- 3RD MODAL -->
     <div id="modal-3" class="modal-overlay">
-      <div class="modal-container">
-        <button class="close-btn" onclick="closeModal('modal-3')">X</button>
-        <img
-          src="assets\images\blogs/cats/cat4.jpg"
-          class="modal-header-img"
-        />
-        <div class="modal-body">
-          <h2 class="modal-title">Developmental Milestone in the Puppy</h2>
-          <span class="modal-author">By Dr. Dawn Ruben</span>
-          <p>
-            Your dog just delivered a litter of cute pudgy puppies. They seem so
-            helpless - being unable to see and hear. Soon you will see many
-            changes as they begin to grow. Here is a quick overview of the
-            developmental milestones in your puppy's life.
-          </p>
+        <div class="modal-container">
+            <button class="close-btn" onclick="closeModal('modal-3')">X</button>
+            <img src="assets\images\blogs/cats/cat4.jpg" class="modal-header-img" />
+            <div class="modal-body">
+                <h2 class="modal-title">Developmental Milestone in the Puppy</h2>
+                <span class="modal-author">By Dr. Dawn Ruben</span>
+                <p>
+                    Your dog just delivered a litter of cute pudgy puppies. They seem so helpless - being unable to see and hear. Soon you will see many changes as they begin to grow. Here is a quick overview of the developmental milestones in your puppy's life.
+                </p>
 
-          <h3>Senses</h3>
-          <ul>
-            <li>
-              Pups are born blind with their eyelids sealed shut. By 2 weeks
-              old, eyelids open and vision develops.
-            </li>
-            <li>
-              Pups are also born deaf with sealed ear canals. By age 17 days,
-              ear canals open and they begin to hear.
-            </li>
-          </ul>
+                <h3>Senses</h3>
+                <ul>
+                    <li>
+                        Pups are born blind with their eyelids sealed shut. By 2 weeks old, eyelids open and vision develops.
+                    </li>
+                    <li>
+                        Pups are also born deaf with sealed ear canals. By age 17 days, ear canals open and they begin to hear.
+                    </li>
+                </ul>
 
-          <h3>Elimination</h3>
-          <p>
-            Puppies are unable to voluntarily eliminate urine and feces. Their
-            mother must lick the genital area to stimulate elimination. By 23
-            days of age, pups can eliminate without help.
-          </p>
+                <h3>Elimination</h3>
+                <p>
+                    Puppies are unable to voluntarily eliminate urine and feces. Their mother must lick the genital area to stimulate elimination. By 23 days of age, pups can eliminate without help.
+                </p>
 
-          <h3>Walking</h3>
-          <p>
-            Puppies start out life squirming and "swimming" across the floor. By
-            16 days of age, pups begin the rudimentary first steps of walking.
-          </p>
+                <h3>Walking</h3>
+                <p>
+                    Puppies start out life squirming and "swimming" across the floor. By 16 days of age, pups begin the rudimentary first steps of walking.
+                </p>
 
-          <h3>Eating</h3>
-          <p>
-            By the time a puppy is 4 to 6 weeks of age, he can start eating
-            solid food and can be safely weaned around 8 weeks of age.
-          </p>
+                <h3>Eating</h3>
+                <p>
+                    By the time a puppy is 4 to 6 weeks of age, he can start eating solid food and can be safely weaned around 8 weeks of age.
+                </p>
 
-          <h3>Teething</h3>
-          <p>
-            As pups begin eating solid food at 4 to 6 weeks, the first teeth
-            begin to erupt. These first teeth are temporary and are soon
-            replaced by permanent teeth around 3 to 5 months of age.
-          </p>
+                <h3>Teething</h3>
+                <p>
+                    As pups begin eating solid food at 4 to 6 weeks, the first teeth begin to erupt. These first teeth are temporary and are soon replaced by permanent teeth around 3 to 5 months of age.
+                </p>
+            </div>
         </div>
-      </div>
     </div>
-
     <!-- 4th Modal -->
     <div id="modal-4" class="modal-overlay">
-      <div class="modal-container">
-        <button class="close-btn" onclick="closeModal('modal-4')">X</button>
-        <img
-          src="assets\images\blogs/dogs/dog4.jpg"
-          class="modal-header-img"
-        />
-        <div class="modal-body">
-          <h2 class="modal-title">Developmental Milestones in the Kitten</h2>
-          <span class="modal-author">By Dr. Dawn Ruben</span>
+        <div class="modal-container">
+            <button class="close-btn" onclick="closeModal('modal-4')">X</button>
+            <img src="assets\images\blogs/dogs/dog4.jpg" class="modal-header-img" />
+            <div class="modal-body">
+                <h2 class="modal-title">Developmental Milestones in the Kitten</h2>
+                <span class="modal-author">By Dr. Dawn Ruben</span>
 
-          <p>
-            Your cat just delivered a litter of cute little kitties. They seem
-            so helpless, unable to see and hear. When can you expect them to
-            begin showing changes as they grow?
-          </p>
+                <p>
+                    Your cat just delivered a litter of cute little kitties. They seem so helpless, unable to see and hear. When can you expect them to begin showing changes as they grow?
+                </p>
 
-          <h3>Senses</h3>
-          
-          <p>
-            Kittens are born blind, with eyelids sealed. By 2 weeks old, eyelids
-            open. They are also born deaf. By 17 days, ear canals open and they
-            begin to hear. By 25 days, they respond to sights and sounds.
-          </p>
+                <h3>Senses</h3>
 
-          <h3>Elimination</h3>
+                <p>
+                    Kittens are born blind, with eyelids sealed. By 2 weeks old, eyelids open. They are also born deaf. By 17 days, ear canals open and they begin to hear. By 25 days, they respond to sights and sounds.
+                </p>
 
-          <p>
-            In addition to being born blind and deaf, kittens are also unable to
-            voluntarily eliminate. The mother must lick the area to stimulate
-            elimination. By 23 days, they are able to eliminate without help.
-          </p>
+                <h3>Elimination</h3>
 
-          <h3>Walking</h3>
+                <p>
+                    In addition to being born blind and deaf, kittens are also unable to voluntarily eliminate. The mother must lick the area to stimulate elimination. By 23 days, they are able to eliminate without help.
+                </p>
 
-          <p>
-            Kittens will start out life squirming. By 18 days of age, kittens
-            begin rudimentary steps. By 27 days, claws can be retracted at will.
-          </p>
+                <h3>Walking</h3>
 
-          <h3>Eating</h3>
+                <p>
+                    Kittens will start out life squirming. By 18 days of age, kittens begin rudimentary steps. By 27 days, claws can be retracted at will.
+                </p>
 
-          <p>
-            By the time a kitten is 4 to 6 weeks of age, he can start eating
-            solid food. Weaning can happen at 8 to 12 weeks of age. Around this
-            time, the first teeth begin to erupt.
-          </p>
+                <h3>Eating</h3>
 
-          <h3>Reproduction</h3>
-          <p>
-            Your kittens are growing quickly. Be aware that by the time most
-            kittens are 6 to 8 months of age, puberty has set in and unplanned
-            pregnancies are possible if precautions are not taken.
-          </p>
+                <p>
+                    By the time a kitten is 4 to 6 weeks of age, he can start eating solid food. Weaning can happen at 8 to 12 weeks of age. Around this time, the first teeth begin to erupt.
+                </p>
+
+                <h3>Reproduction</h3>
+                <p>
+                    Your kittens are growing quickly. Be aware that by the time most kittens are 6 to 8 months of age, puberty has set in and unplanned pregnancies are possible if precautions are not taken.
+                </p>
+            </div>
         </div>
-      </div>
-      </div>
-
-      <!-- 5th Modal -->
+    </div>
+    <!-- 5th Modal -->
     <div id="modal-5" class="modal-overlay">
-      <div class="modal-container">
-        <button class="close-btn" onclick="closeModal('modal-5')">X</button>
-        <img
-          src="assets\images\blogs/cats/cat5.jpg"
-          class="modal-header-img"
-        />
-        <div class="modal-body">
-          <h2 class="modal-title">Keeping Your Senior Cat Healty</h2>
-          <span class="modal-author">By PetPlace Veterinarians</span>
-          
+        <div class="modal-container">
+            <button class="close-btn" onclick="closeModal('modal-5')">X</button>
+            <img src="assets\images\blogs/cats/cat5.jpg" class="modal-header-img" />
+            <div class="modal-body">
+                <h2 class="modal-title">Keeping Your Senior Cat Healty</h2>
+                <span class="modal-author">By PetPlace Veterinarians</span>
 
-          <p>
-            Much as you hate to see it happen, your cat will eventually enter their senior years. 
-            Although you can't hold back the clock, there are many things you can do to help keep your cat healthy and active as long as possible.
-          </p>
 
-          <h3>Monitor Your Cat's Health</h3>
-          
-          <ul>
-            <li>
-              <b>Visit your veterinarian frequently.</b>
-              <p>
-              Most vets recommend a check-up once every 6 months when your cat reaches their senior years.
-              Blood test, X-rays, electrocardiograms, ultrasound, CT scans or MRIs might be necessary. Be prepared to tell your vet
-              about any changes in your pet's stamina appetite, or behavior, when it began and what might have triggered it.
-              </p>
-            </li>
-          
-            <li>
-              <b>Have hearing and eyesight checked</b>
-              <p>
-              It's not unusual for an elderly cat's eyes to look cloudy, and the condition may not signal illness. Like humans,
-              however, they can develop cataracts and glaucoma and can experience hearing loss. If your pet seems surprised when you come close to them,
-              bumps into things or doesn't even come when you call them, the culprit may be failing faculties.
-              </p>
-            </li>
-          </ul>
-            <h3>Groom Your Senior Cat Often</h3>
-          <ul>
-            <li>
-              <b>Brush your cat's teeth daily.</b>
-              <p>This staves off tooth decay and helps prevent gum disease and tooth loss. Brushing regularly will also allow you to notice mouth and toungue ulcers early on.</p>
-            </li>
+                <p>
+                    Much as you hate to see it happen, your cat will eventually enter their senior years. Although you can't hold back the clock, there are many things you can do to help keep your cat healthy and active as long as possible.
+                </p>
 
-            <li>
-              <b>Note any increase in "kitty breath."</b>
-              <p>
-                Cats have their natural smells and cat food can linger on their breath, 
-                but a change in breath to the point that it becomes strong or offensive can signal various illnesses.
-              </p>
-            </li>
+                <h3>Monitor Your Cat's Health</h3>
 
-            <li>
-              <b>Groom them at least once a week.</b>
-              <p>
-                 It's more important than ever to spare your cat the annoyance of fleas and other parasites. As they age, they won't be able to groom themselves as easily as they used to. 
-                 As you brush them, take note of any bumps, skin lesions, or unusual hair loss. And remember that their skin is less elastic than it used to be, so be careful not to scrape or pull it. 
-                 Be sure to clip their nails to prevent overgrowth.
-              </p>
-            </li>
+                <ul>
+                    <li>
+                        <b>Visit your veterinarian frequently.</b>
+                        <p>
+                            Most vets recommend a check-up once every 6 months when your cat reaches their senior years. Blood test, X-rays, electrocardiograms, ultrasound, CT scans or MRIs might be necessary. Be prepared to tell your vet about any changes in your pet's stamina
+                            appetite, or behavior, when it began and what might have triggered it.
+                        </p>
+                    </li>
 
-            <li>
-              <b>Massage their joints and limbs.</b>
-              <p>
-                If your cat isn't able to exercise routinely, improve their flexibility and circulation by gently massaging the muscles and joints. 
-                If they object, just pet them for as long as they allow. Don't force massage on an unwilling kitty.
-              </p>
-            </li>
-          </ul>
+                    <li>
+                        <b>Have hearing and eyesight checked</b>
+                        <p>
+                            It's not unusual for an elderly cat's eyes to look cloudy, and the condition may not signal illness. Like humans, however, they can develop cataracts and glaucoma and can experience hearing loss. If your pet seems surprised when you come close to them,
+                            bumps into things or doesn't even come when you call them, the culprit may be failing faculties.
+                        </p>
+                    </li>
+                </ul>
+                <h3>Groom Your Senior Cat Often</h3>
+                <ul>
+                    <li>
+                        <b>Brush your cat's teeth daily.</b>
+                        <p>This staves off tooth decay and helps prevent gum disease and tooth loss. Brushing regularly will also allow you to notice mouth and toungue ulcers early on.</p>
+                    </li>
 
-          <h3>Keep your Senior Cat Active</h3>
+                    <li>
+                        <b>Note any increase in "kitty breath."</b>
+                        <p>
+                            Cats have their natural smells and cat food can linger on their breath, but a change in breath to the point that it becomes strong or offensive can signal various illnesses.
+                        </p>
+                    </li>
 
-          <ul>
-            <li>
-              <b>Provide Moderate exercise.</b>
-              <p>
-                The old adage “use it or lose it” is as true for cats as it is for humans. 
-                Exercise helps your cat maintain muscle tone, keeps their heart and digestion healthy, and even improves attitude. 
-                Gentle games with toys or catnip not only keep them in shape but make them mentally alert and promote positive interaction.
-              </p>
-            </li>
+                    <li>
+                        <b>Groom them at least once a week.</b>
+                        <p>
+                            It's more important than ever to spare your cat the annoyance of fleas and other parasites. As they age, they won't be able to groom themselves as easily as they used to. As you brush them, take note of any bumps, skin lesions, or unusual hair loss. And
+                            remember that their skin is less elastic than it used to be, so be careful not to scrape or pull it. Be sure to clip their nails to prevent overgrowth.
+                        </p>
+                    </li>
 
-            <li>
-              <b>Give them a clean "bathroom".</b>
-              <p>
-                Their digestion may be irregular, and the bladder may lose elasticity and capacity. The litter box may need more frequent cleaning or changing.
-              </p>
-            </li>
+                    <li>
+                        <b>Massage their joints and limbs.</b>
+                        <p>
+                            If your cat isn't able to exercise routinely, improve their flexibility and circulation by gently massaging the muscles and joints. If they object, just pet them for as long as they allow. Don't force massage on an unwilling kitty.
+                        </p>
+                    </li>
+                </ul>
 
-            <li>
-              <b>Stick to a regular schedule.</b>
-              <p>
-                Your cat always liked a routine; they'll appreciate it even more now. Feed them and play with them at the same times each day.
-              </p>
-            </li>
+                <h3>Keep your Senior Cat Active</h3>
 
-            <li>
-              <b>Minimize stress.</b>
-              <p>
-                As your cat ages, they may not welcome strange animals or people or even tolerate familiar children. 
-                Due to their failing senses, arthritis, or forgetfulness, your cat may shy away from previously welcomed social situations.
-              </p>
-            </li>
-          </ul>
+                <ul>
+                    <li>
+                        <b>Provide Moderate exercise.</b>
+                        <p>
+                            The old adage “use it or lose it” is as true for cats as it is for humans. Exercise helps your cat maintain muscle tone, keeps their heart and digestion healthy, and even improves attitude. Gentle games with toys or catnip not only keep them in shape
+                            but make them mentally alert and promote positive interaction.
+                        </p>
+                    </li>
 
-          <h3>Help Your Cat Eat and Sleep Comfortably</h3>
+                    <li>
+                        <b>Give them a clean "bathroom".</b>
+                        <p>
+                            Their digestion may be irregular, and the bladder may lose elasticity and capacity. The litter box may need more frequent cleaning or changing.
+                        </p>
+                    </li>
 
-          <ul>
-            <li>
-              <b>Don't leave them outside alone.</b>
-              <p>
-                Keep your cat indoors and minimize their time outside. As a cat ages, they'll be sensitive to changes in temperature - aging hearts and lungs don't adjust as well to extremes of hot and cold. 
-                Since their senses, reflexes, and thinking aren't as sharp, your cat is likely to be more prone to accidents, injury from other animals, or even getting lost.
-              </p>
-            </li>
+                    <li>
+                        <b>Stick to a regular schedule.</b>
+                        <p>
+                            Your cat always liked a routine; they'll appreciate it even more now. Feed them and play with them at the same times each day.
+                        </p>
+                    </li>
 
-            <li>
-              <b>Give them a soft bed.</b>
-              <p>
-                Arthritis and other conditions will make it harder for your cat to sleep soundly. Orthopedic cat beds are available.
-              </p>
-            </li>
+                    <li>
+                        <b>Minimize stress.</b>
+                        <p>
+                            As your cat ages, they may not welcome strange animals or people or even tolerate familiar children. Due to their failing senses, arthritis, or forgetfulness, your cat may shy away from previously welcomed social situations.
+                        </p>
+                    </li>
+                </ul>
 
-            <li>
-              <b>Feed them properly.</b>
-              <p>
-                An aging cat gains weight more easily because their metabolism is slowing. 
-                Your vet can recommend food that is high in fiber and lower in fat, so that your cat is eating their accustomed amount of food, but with fewer calories.
-                As digestion worsens, they might do better with smaller, more frequent meals. Conditions such as diabetes, arthritis, and heart or liver problems also call for special nutritional plans.
-              </p>
-            </li>
+                <h3>Help Your Cat Eat and Sleep Comfortably</h3>
 
-            <li>
-              <b>Always provide fresh, cool water.</b>
-              <p>
-                This is a good policy for creatures of all ages, but especially important for an older cat.
-              </p>
-            </li>
-          </ul>
+                <ul>
+                    <li>
+                        <b>Don't leave them outside alone.</b>
+                        <p>
+                            Keep your cat indoors and minimize their time outside. As a cat ages, they'll be sensitive to changes in temperature - aging hearts and lungs don't adjust as well to extremes of hot and cold. Since their senses, reflexes, and thinking aren't as sharp,
+                            your cat is likely to be more prone to accidents, injury from other animals, or even getting lost.
+                        </p>
+                    </li>
 
+                    <li>
+                        <b>Give them a soft bed.</b>
+                        <p>
+                            Arthritis and other conditions will make it harder for your cat to sleep soundly. Orthopedic cat beds are available.
+                        </p>
+                    </li>
+
+                    <li>
+                        <b>Feed them properly.</b>
+                        <p>
+                            An aging cat gains weight more easily because their metabolism is slowing. Your vet can recommend food that is high in fiber and lower in fat, so that your cat is eating their accustomed amount of food, but with fewer calories. As digestion worsens, they
+                            might do better with smaller, more frequent meals. Conditions such as diabetes, arthritis, and heart or liver problems also call for special nutritional plans.
+                        </p>
+                    </li>
+
+                    <li>
+                        <b>Always provide fresh, cool water.</b>
+                        <p>
+                            This is a good policy for creatures of all ages, but especially important for an older cat.
+                        </p>
+                    </li>
+                </ul>
+
+            </div>
         </div>
-      </div>
-      </div>
-
-      <!-- 6th Modal -->
+    </div>
+    <!-- 6th Modal -->
     <div id="modal-6" class="modal-overlay">
-      <div class="modal-container">
-        <button class="close-btn" onclick="closeModal('modal-6')">X</button>
-        <img
-          src="assets\images\blogs/dogs/dog5.jpg"
-          class="modal-header-img"
-        />
-        <div class="modal-body">
-          <h2 class="modal-title">The Responsibilities of Pet Ownership: A Checklist for New Dog Owners</h2>
-          <span class="modal-author">By Bennett Glace</span>
-          
-          <p>
-            Dogs make an affectionate addition to any family, but dog ownership isn't just about companionship. 
-            Responsible dog ownership is a full-time job, one that starts even before you've welcomed your new pet home.
-            <br> In celebration of Responsible Pet Owners Month, here's a breakdown of everything you'll need to consider before adopting a dog.
-          </p>
+        <div class="modal-container">
+            <button class="close-btn" onclick="closeModal('modal-6')">X</button>
+            <img src="assets\images\blogs/dogs/dog5.jpg" class="modal-header-img" />
+            <div class="modal-body">
+                <h2 class="modal-title">The Responsibilities of Pet Ownership: A Checklist for New Dog Owners</h2>
+                <span class="modal-author">By Bennett Glace</span>
 
-          <h3>Are You Ready for Dog Ownership?</h3>
+                <p>
+                    Dogs make an affectionate addition to any family, but dog ownership isn't just about companionship. Responsible dog ownership is a full-time job, one that starts even before you've welcomed your new pet home.
+                    <br> In celebration of Responsible Pet Owners Month, here's a breakdown of everything you'll need to consider before adopting a dog.
+                </p>
 
-          <p>
-            Purchasing or adopting a dog isn't a decision to make hastily. Anyone with a serious interest in pet parenthood should first conduct a thorough and objective self-assessment:
-          </p>
+                <h3>Are You Ready for Dog Ownership?</h3>
 
-          <ul>
-            <li>Can I afford the long-term costs of pet care?</li>
-            <li>Am I prepared to keep a pet happy and healthy?</li>
-            <li>Do I have the time to provide care and affection?</li>
-            <li>Is my living situation and lifestyle suitable for dog ownership?</li>
-          </ul>
+                <p>
+                    Purchasing or adopting a dog isn't a decision to make hastily. Anyone with a serious interest in pet parenthood should first conduct a thorough and objective self-assessment:
+                </p>
 
-          <p>
-            Answering 'Yes' to these questions does not necessarily mean you're ready for any kind of dog. 
-            Differences in breed, size, age, and temperament make for varying needs. Take care to select a dog that will suit your capabilities and resources.
-          </p>
+                <ul>
+                    <li>Can I afford the long-term costs of pet care?</li>
+                    <li>Am I prepared to keep a pet happy and healthy?</li>
+                    <li>Do I have the time to provide care and affection?</li>
+                    <li>Is my living situation and lifestyle suitable for dog ownership?</li>
+                </ul>
 
-          <p>
-            Remember that anyone purchasing from a breeder will need to conduct additional research. 
-            Some disreputable individuals claim to be breeders while exploiting animals and misleading animal lovers. Working with the wrong breeder could mean tacitly supporting the so-called “puppy mill pipeline.”
-          </p>
+                <p>
+                    Answering 'Yes' to these questions does not necessarily mean you're ready for any kind of dog. Differences in breed, size, age, and temperament make for varying needs. Take care to select a dog that will suit your capabilities and resources.
+                </p>
 
-          <h3>Is Your Dog-Proofed?</h3>
+                <p>
+                    Remember that anyone purchasing from a breeder will need to conduct additional research. Some disreputable individuals claim to be breeders while exploiting animals and misleading animal lovers. Working with the wrong breeder could mean tacitly supporting
+                    the so-called “puppy mill pipeline.”
+                </p>
 
-          <p>
-            This is an especially important question if you'll be bringing home a puppy. 
-            Keep an eye out for common household items that might present a hazard and take precautions to minimize the risk of injury or poisoning. 
-            Take precautions to protect your furniture too. After all, hyperactive young puppies will be eager to sink their teeth into just about anything.
-          </p>
+                <h3>Is Your Dog-Proofed?</h3>
 
-          <h3>Have You Chosen a Reliable Vet?</h3>
+                <p>
+                    This is an especially important question if you'll be bringing home a puppy. Keep an eye out for common household items that might present a hazard and take precautions to minimize the risk of injury or poisoning. Take precautions to protect your furniture
+                    too. After all, hyperactive young puppies will be eager to sink their teeth into just about anything.
+                </p>
 
-          <p>
-            Dog ownership is a huge responsibility, but you don't have to go it alone. 
-            Your veterinarian will serve as an ally throughout your dog's life, offering expert guidance and ensuring they always get the best care possible. 
-            Make a careful evaluation to ensure your chosen vet is someone you can trust and rely on.
-          </p>
+                <h3>Have You Chosen a Reliable Vet?</h3>
 
-          <h3>Does Your Dog Have Proper Identification?</h3>
+                <p>
+                    Dog ownership is a huge responsibility, but you don't have to go it alone. Your veterinarian will serve as an ally throughout your dog's life, offering expert guidance and ensuring they always get the best care possible. Make a careful evaluation to ensure
+                    your chosen vet is someone you can trust and rely on.
+                </p>
 
-          <p>
-            Even house pets can get lost. A collar with identification tags and accurate contact information is one of the simplest ways to ensure your pet can always find their way home. 
-            Some states even require pet parents to formally register their dogs in a database and keep them tagged at all times.
-          </p>
+                <h3>Does Your Dog Have Proper Identification?</h3>
 
-          <h3>Is Your Dog Microchipped?</h3>
+                <p>
+                    Even house pets can get lost. A collar with identification tags and accurate contact information is one of the simplest ways to ensure your pet can always find their way home. Some states even require pet parents to formally register their dogs in a database
+                    and keep them tagged at all times.
+                </p>
 
-          <p>
-            Microchipping provides an extra level of identification and security. 
-            The procedure greatly reduces the risk that your pet will get stolen or become lost. 
-            Make sure to register your dog's microchip in the appropriate database and keep your contact information up to date.
-          </p>
+                <h3>Is Your Dog Microchipped?</h3>
 
-          <h3>Is Your Dog Spayed or Neutered?</h3>
+                <p>
+                    Microchipping provides an extra level of identification and security. The procedure greatly reduces the risk that your pet will get stolen or become lost. Make sure to register your dog's microchip in the appropriate database and keep your contact information
+                    up to date.
+                </p>
 
-          <p>
-            Pet overpopulation is a huge problem nationwide. It's largely to blame for the staggering number of pets that are euthanized every year. 
-            If you don't intend to breed your pet, spaying and neutering can address this issue while keeping your pet safe. 
-            Spayed and neutered pets are less likely to escape outdoors, where they may risk injury or become lost.
-          </p>
+                <h3>Is Your Dog Spayed or Neutered?</h3>
 
-          <h3>Is Your Dog Properly Vaccinated?</h3>
+                <p>
+                    Pet overpopulation is a huge problem nationwide. It's largely to blame for the staggering number of pets that are euthanized every year. If you don't intend to breed your pet, spaying and neutering can address this issue while keeping your pet safe. Spayed
+                    and neutered pets are less likely to escape outdoors, where they may risk injury or become lost.
+                </p>
 
-          <p>
-            During the first months of their life, your dog will require a number of vaccinations. 
-            Once your dog is over 2 years of age, you should work alongside your veterinarian to determine which vaccines they will need throughout the rest of their lives.
-          </p>
+                <h3>Is Your Dog Properly Vaccinated?</h3>
 
-          <h3>Are You and Your Dog Obeying the Law?</h3>
+                <p>
+                    During the first months of their life, your dog will require a number of vaccinations. Once your dog is over 2 years of age, you should work alongside your veterinarian to determine which vaccines they will need throughout the rest of their lives.
+                </p>
 
-          <p>
-            Depending on where you live, local regulations may play a role in pet ownership. 
-            Laws may require pet owners to keep vaccinations and registrations up to date, ensure dogs are leashed at all times, and dispose of dog waste appropriately.
-          </p>
+                <h3>Are You and Your Dog Obeying the Law?</h3>
 
-          <p>
-            There are also the unwritten rules of dog ownership. 
-            Even if there are no local ordinances banning excessive noise, for example, keeping barking to a minimum is the respectful, responsible thing to do.
-          </p>
+                <p>
+                    Depending on where you live, local regulations may play a role in pet ownership. Laws may require pet owners to keep vaccinations and registrations up to date, ensure dogs are leashed at all times, and dispose of dog waste appropriately.
+                </p>
 
-          <h3>Have You Identified Trustworthy Caretakers?</h3>
+                <p>
+                    There are also the unwritten rules of dog ownership. Even if there are no local ordinances banning excessive noise, for example, keeping barking to a minimum is the respectful, responsible thing to do.
+                </p>
 
-          <p>
-            From vacation to sudden incapacitation, there are a number of reasons you might not be able to provide for your pet. 
-            It's important to plan ahead for these periods by selecting trusted pet caretakers. 
-            They might be friends, neighbors, or members of your family. 
-            Arm them with everything they'll need to provide the care your pet requires and the affection they expect.
-          </p>
+                <h3>Have You Identified Trustworthy Caretakers?</h3>
 
-          <h3>Are You Prepared to Say Goodbye?</h3>
+                <p>
+                    From vacation to sudden incapacitation, there are a number of reasons you might not be able to provide for your pet. It's important to plan ahead for these periods by selecting trusted pet caretakers. They might be friends, neighbors, or members of your
+                    family. Arm them with everything they'll need to provide the care your pet requires and the affection they expect.
+                </p>
 
-          <p>
-            It's not pleasant to think about, but you'll probably outlive your dog. End-of-life decisions are among the most difficult and eventful ones a pet owner will make. 
-            When treatment is no longer possible or advisable, responsible dog lovers are duty bound to make the humane decision. 
-            Your veterinarian will offer expert guidance throughout this uneasy period. While it may be tempting to pride your own emotions over their recommendations, remember that they have your pet's well-being in mind.
-          </p>
+                <h3>Are You Prepared to Say Goodbye?</h3>
+
+                <p>
+                    It's not pleasant to think about, but you'll probably outlive your dog. End-of-life decisions are among the most difficult and eventful ones a pet owner will make. When treatment is no longer possible or advisable, responsible dog lovers are duty bound
+                    to make the humane decision. Your veterinarian will offer expert guidance throughout this uneasy period. While it may be tempting to pride your own emotions over their recommendations, remember that they have your pet's well-being
+                    in mind.
+                </p>
 
 
+            </div>
         </div>
-      </div>
-      </div>
-      <footer>
-      <div class="footer-content">
-        <div class="footer-col">
-          <h4>PawHub</h4>
-          <p>
-            We believe every pet deserves a loving home. Join our community and
-            find your new best friend today.
-          </p>
-        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>PawHub</h4>
+                <p>
+                    We believe every pet deserves a loving home. Join our community and find your new best friend today.
+                </p>
+            </div>
 
-        <div class="footer-col footer-links">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="Adoption_Page.html">Adopt a Pet</a></li>
-            <li><a href="">Care Guides</a></li>
-            <li><a href="about_us.html">About Us</a></li>
-            <li><a href="get-involved.html">Volunteer</a></li>
-          </ul>
+            <div class="footer-col footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Adoption_Page.html">Adopt a Pet</a></li>
+                    <li><a href="blog.html">Care Guides</a></li>
+                    <li><a href="about_us.html">About Us</a></li>
+                    <li><a href="get-involved.html">Volunteer</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Stay Updated</h4>
+                <p>
+                    Get the latest adoption tips and cute pet photos delivered to your inbox.
+                </p>
+                <div class="newsletter-box">
+                    <input type="email" placeholder="Enter your email" />
+                    <button>Go</button>
+                </div>
+            </div>
         </div>
 
-        <div class="footer-col">
-          <h4>Stay Updated</h4>
-          <p>
-            Get the latest adoption tips and cute pet photos delivered to your
-            inbox.
-          </p>
-          <div class="newsletter-box">
-            <input type="email" placeholder="Enter your email" />
-            <button>Go</button>
-          </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 PawHub. All Rights Reserved. | Designed with Love.</p>
         </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p>&copy; 2025 PawHub. All Rights Reserved. | Designed with Love.</p>
-      </div>
     </footer>
     </div>
-
     <!-- JS -->
     <script>
-      function openModal(modalId) {
-        var modal = document.getElementById(modalId);
-        modal.classList.add("show");
-        document.body.style.overflow = "hidden";
-      }
+        function openModal(modalId) {
+            var modal = document.getElementById(modalId);
+            modal.classList.add("show");
+            document.body.style.overflow = "hidden";
+        }
 
-      function closeModal(modalId) {
-        var modal = document.getElementById(modalId);
-        modal.classList.remove("show");
-        document.body.style.overflow = "auto";
-      }
+        function closeModal(modalId) {
+            var modal = document.getElementById(modalId);
+            modal.classList.remove("show");
+            document.body.style.overflow = "auto";
+        }
     </script>
-  </body>
+</body>
+
 </html>

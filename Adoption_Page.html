@@ -7,6 +7,9 @@
     <title>Adopt - PawHub</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <style>
+        /* --- IMPORT FONTS --- */
+        
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
         * {
             margin: 0;
             padding: 0;
@@ -14,7 +17,7 @@
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(180deg, #FFB6C1 0%, #FFC0CB 100%);
             min-height: 100vh;
         }
@@ -68,7 +71,7 @@
         }
         
         .hero h1 {
-            font-size: 70px;
+            font-size: 64px;
             color: rgba(233, 30, 99, 0.3);
             font-weight: bold;
             margin-bottom: 10px;
@@ -76,7 +79,7 @@
         }
         
         .hero p {
-            font-size: 20px;
+            font-size: 18px;
             color: #666;
             max-width: 600px;
             margin: 0 auto 20px;
@@ -101,7 +104,7 @@
             text-align: center;
             font-weight: 600;
         }
-        /* Filter Section - Updated without white container */
+        /* Filter Section */
         
         .filter-section {
             padding: 30px 0;
@@ -166,13 +169,9 @@
         
         .filter-options select option {
             background: #FFD1DC;
-            /* Light pink background for all options */
             color: #E91E63;
-            /* Pink text color */
             padding: 10px;
-            /* Add some padding for better appearance */
             font-weight: 500;
-            /* Make text slightly bold */
         }
         /* Pets Grid */
         
@@ -708,8 +707,6 @@
             font-size: 14px;
             font-weight: 300;
         }
-
-
         /* Footer Hover */
         
         .footer-links a:hover {
@@ -760,13 +757,16 @@
 </head>
 
 <body>
-    <!-- Fixed Header -->
+    <!-- Navigation -->
     <header>
         <a href="index.html" class="logo">PawHub</a>
         <nav>
-            <a href="index.html">Home</a>     <!-- Done -->
-            <a href="" class="active">Adopt</a> <!-- Done -->
-            <a href="Shop.html">Favourites</a>   <!-- Done -->
+            <a href="index.html">Home</a>
+            <!-- Done -->
+            <a href="" class="active">Adopt</a>
+            <!-- Done -->
+            <a href="Shop.html">Favourites</a>
+            <!-- Done -->
             <a href="blog.html">Blog</a>
             <a href="get-involved.html">Get Involved</a>
             <a href="about_us.html">About Us</a>
@@ -1140,7 +1140,7 @@
                         <strong style="color: #666; font-size: 15px;">Need Help?</strong>
                     </div>
                     <p style="margin: 0; color: #666; font-size: 14px; line-height: 1.5;">
-                        Contact PawHub: (555) PAW-HELP | info@pawhub.org<br> Office Hours: Monday-Friday, 9AM-5PM
+                        Contact PawHub: 09549835495 | abillasander@gmail.com<br> Office Hours: Monday-Friday, 9AM-5PM
                     </p>
                 </div>
 
@@ -1157,7 +1157,7 @@
         </div>
     </div>
     <!-- Footer -->
-   <footer>
+    <footer>
         <div class="footer-content">
             <div class="footer-col">
                 <h4>PawHub</h4>
@@ -1592,7 +1592,7 @@
         function showPetDetails(petId) {
             currentPet = pets.find(pet => pet.id === petId);
             if (currentPet) {
-                document.getElementById('modalPetImage').src = `images/${currentPet.image}`;
+                document.getElementById('modalPetImage').src = `${currentPet.image}`;
                 document.getElementById('modalPetName').textContent = currentPet.name;
                 document.getElementById('modalPetAge').textContent = currentPet.age;
                 document.getElementById('modalPetBreed').textContent = currentPet.breed;
