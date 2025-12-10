@@ -1,128 +1,31 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>PawHub</title>
     <style>
         /* Import Poppins font */
+        
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-
-        body {
+        * {
             margin: 0;
             padding: 0;
-            
-
+            box-sizing: border-box;
+        }
         
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        body {
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(180deg, #FFB6C1 0%, #FFC0CB 100%);
             min-height: 100vh;
-
-
+            overflow-x: hidden;
         }
-
-        header {
-            background-color: #F4A7B9;
-            height: 54px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 40px;
-        }
-
-        .header-left {
-          display: flex;
-          align-items: center;
-          gap: 12px; /* controls spacing between logo and title */
-        }
-
-
-        .logo-image img {
-            width: auto;
-            height: 50px;
-        }
-
-        h1 {
-            font-weight: 700;
-            font-size: 30px;
-            line-height: 100%;
-            color: #E46885;
-            margin: 0;
-        }
-
-        .nav-buttons button {
-            background: transparent;
-            border: none;
-            color: #E46885;
-            font-weight: 600;
-            font-size: 16px;
-            cursor: pointer;
-            margin-left: 20px;
-            transition: color 0.3s, transform 0.2s;
-        }
-
-        .nav-buttons button:hover {
-            color: #ffffff;
-            transform: scale(1.05);
-        }
-
-        .body-image img {
-            width: 1528px;
-            height: 941px;
-        }
-
-
-        .text-overlay {
-            position: absolute;
-            top: 46%;
-            left: 7%;
-            color: #F4A7B9;
-        }
-
-        .text-overlay h2 {
-            font-size: 48px;
-            font-weight: 700;
-            color: #F4A7B9;
-            margin: 0;
-        }
-
-        .text-overlay p {
-            font-size: 32px;
-            font-weight: 700;
-            color: #F8C6D0;
-            margin: 2px 0;
-        }
+        /* Updated Navigation to match Blog page exactly */
         
-
-
-
-
-
-
-
-
-  /* Header */
-  
-        .body-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }      
-
         header {
-            background-color: #FFCCD4;
-
-
+            background: rgba(255, 255, 255, 0.3);
             padding: 20px 40px;
-            
-
-            position: absolute;
-            width: 8000px;
-            height: 37.5px;
-
-            top: 0px;
-
-            margin-left: -10px;
-            /* display: flex; */
+            display: flex;
             justify-content: space-between;
             align-items: center;
             backdrop-filter: blur(10px);
@@ -132,12 +35,6 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            
-            position: absolute;
-
-            top: 20px;
-            left: 50px;
-
             font-size: 24px;
             font-weight: bold;
             color: #E91E63;
@@ -152,11 +49,6 @@
         nav {
             display: flex;
             gap: 30px;
-
-            position:absolute;
-
-            left: 977.5px;
-            top: 28px;
         }
         
         nav a {
@@ -164,30 +56,61 @@
             color: #666;
             font-weight: 500;
             transition: color 0.3s;
+            font-size: 16px;
         }
         
         nav a:hover,
         nav a.active {
             color: #E91E63;
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
+        .logo-image img {
+            width: auto;
+            height: 50px;
+        }
+        
+        h1 {
+            font-weight: 700;
+            font-size: 30px;
+            line-height: 100%;
+            color: #E46885;
+            margin: 0;
+        }
+        
+        .body-image img {
+            width: 1528px;
+            height: 941px;
+        }
+        
+        .text-overlay {
+            position: absolute;
+            top: 46%;
+            left: 7%;
+            color: #F4A7B9;
+        }
+        
+        .text-overlay h2 {
+            font-size: 48px;
+            font-weight: 700;
+            color: #F4A7B9;
+            margin: 0;
+        }
+        
+        .text-overlay p {
+            font-size: 32px;
+            font-weight: 700;
+            color: #F8C6D0;
+            margin: 2px 0;
+        }
+        /* Header */
+        
+        .body-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
         /* Right side adoption card */
+        
         .adoption-box {
             position: absolute;
             top: 40%;
@@ -197,106 +120,110 @@
             background: #F8C6D0;
             border-radius: 15px;
             padding: 15px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
         }
-
+        
         .adoption-box img {
             width: 100%;
             height: 294px;
             border-radius: 10px;
             object-fit: cover;
         }
-
+        
         .adoption-box-bottom {
             display: flex;
             align-items: center;
-            gap: 10px; /* space between text and button */
+            gap: 10px;
         }
-
+        
         .adoption-box p {
             font-size: 16px;
             color: #000000;
             font-weight: 400;
-            margin-top: 20px;
+            margin-top: 7px;
         }
-
-
+        
         .adoption-box button {
-            margin-right: 8px;
-            padding: 10px 18px;
+            background: linear-gradient(135deg, #F48FB1 0%, #E91E63 100%);
+            color: white;
             border: none;
-            background-color: #F4A7B9;
-            color: #000000;
-            font-weight: 400;
-            border-radius: 8px;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 600;
             cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            margin-top: 5px;
         }
-
+        
         .adoption-box button:hover {
-            background-color: #E46885;
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(233, 30, 99, 0.3);
         }
-
+        
         .featured-video {
-          background-color: #F8C6D0;
-          margin: 0;
-          padding: 0;
-          height: 730px;
+            background-color: #F8C6D0;
+            margin: 0;
+            padding: 0;
+            height: 730px;
         }
-
+        
         .featured-title {
-          font-weight: 400;
-          font-size: 48px;
-          color: #F4A7B9;
-          margin-top: 40px;
-          text-align: center;
-          line-height: 80px;
-          padding-top: 20px;
-          padding-bottom: 20px;
+            font-weight: 400;
+            font-size: 48px;
+            color: #F4A7B9;
+            margin-top: 40px;
+            text-align: center;
+            line-height: 80px;
+            padding-top: 20px;
+            padding-bottom: 20px;
         }
-
+        
         .video-container {
-          margin: 40px;
-          text-align: left;
+            margin: 40px;
+            text-align: left;
         }
-
+        
         .video-wrapper {
-          display: flex;
-          align-items: flex-start;
-          justify-content: flex-start;
-          gap: 40px;
-          margin: 40px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: 40px;
+            margin: 40px;
         }
-
+        
         .video-text {
-          flex: 1;
-          color: #F4A7B9;
+            flex: 1;
+            color: #F4A7B9;
         }
-
+        
         .video-text h2 {
-          font-weight: 700;
-          font-size: 32px;
-          color: #000000;
-          margin-top: 100px;
+            font-weight: 700;
+            font-size: 32px;
+            color: #000000;
+            margin-top: 100px;
         }
-
+        
         .video-text p {
-          font-weight: 400;
-          font-size: 20px;
-          color: #000000;
-          margin-top: 10px;
-          padding: 0px;
-          text-align: left;
-          display: block;
+            font-weight: 400;
+            font-size: 20px;
+            color: #000000;
+            margin-top: 10px;
+            padding: 0px;
+            text-align: left;
+            display: block;
         }
-
-
+        
         .pets-section {
             background-color: #F8C6D0;
             margin: 0;
             padding: 0;
         }
-
         /* Title */
+        
         .section-title {
             font-weight: 400;
             font-size: 48px;
@@ -306,8 +233,8 @@
             padding-top: 20px;
             padding-bottom: 20px;
         }
-
         /* Container for the 4 cards */
+        
         .pets-container {
             display: flex;
             flex-wrap: wrap;
@@ -315,9 +242,8 @@
             gap: 20px;
             padding-bottom: 40px;
         }
-
-
         /* Card Style */
+        
         .pet-card {
             background-color: white;
             width: 735px;
@@ -326,15 +252,15 @@
             padding-bottom: 20px;
             position: relative;
         }
-
         /* Big Image */
+        
         .pet-big-img {
             width: 100%;
             height: 292px;
             object-fit: cover;
         }
-
         /* Small image circle */
+        
         .pet-circle {
             background-color: #E46885;
             width: 143px;
@@ -346,7 +272,7 @@
             left: 50%;
             transform: translateX(-50%);
         }
-
+        
         .pet-circle img {
             width: 100%;
             height: 100%;
@@ -355,8 +281,8 @@
             border-radius: 50%;
             display: block;
         }
-
         /* Description */
+        
         .pet-description {
             margin-top: 120px;
             padding: 0 25px;
@@ -365,14 +291,14 @@
             font-size: 16px;
             line-height: 1.5;
         }
-
         /* Button */
+        
         .pet-button {
             display: block;
             margin: 20px auto;
-            margin-top: 40px;
+            margin-top: 30px;
             padding: 12px 24px;
-            background-color: #ffb6c1;
+            background: linear-gradient(135deg, #F48FB1 0%, #E91E63 100%);
             color: white;
             font-weight: 600;
             font-size: 16px;
@@ -380,116 +306,123 @@
             border: none;
             border-radius: 30px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: all 0.3s ease;
         }
+        
         .pet-button:hover {
-            background-color: #ff8da1; /* slightly darker pink on hover */
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(233, 30, 99, 0.3);
         }
-
-       footer {
-        background-color: #e46885; /* The darker pink from your buttons */
-        color: white;
-        padding: 60px 0 20px 0;
-        margin-top: 60px; /* Space between last card and footer */
-      }
-
-      .footer-content {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 40px;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 40px;
-      }
-
-      .footer-col h4 {
-        font-size: 22px;
-        margin-bottom: 20px;
-        font-weight: 700;
-        color: #fff;
-      }
-
-      .footer-col p {
-        font-size: 14px;
-        font-weight: 300;
-        line-height: 1.8;
-        margin-bottom: 20px;
-        color: rgba(255, 255, 255, 0.9);
-      }
-
-      .footer-links ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-
-      .footer-links li {
-        margin-bottom: 12px;
-      }
-
-      .footer-links a {
-        text-decoration: none;
-        color: rgba(255, 255, 255, 0.9);
-        font-weight: 400;
-        transition: padding-left 0.3s;
-      }
-
-      .footer-links a:hover {
-        padding-left: 8px; /* Slide effect on hover */
-        color: white;
-        text-decoration: underline;
-      }
-
-      /* Newsletter Input Style to match your Hero Button */
-      .newsletter-box {
-        display: flex;
-        gap: 10px;
-        margin-top: 15px;
-      }
-
-      .newsletter-box input {
-        width: 100%;
-        padding: 12px 15px;
-        border-radius: 50px;
-        border: none;
-        outline: none;
-        font-family: "Poppins", sans-serif;
-      }
-
-      .newsletter-box button {
-        background-color: #333;
-        color: white;
-        border: none;
-        padding: 12px 20px;
-        border-radius: 50px;
-        cursor: pointer;
-        font-weight: 600;
-        transition: background 0.3s;
-      }
-
-      .newsletter-box button:hover {
-        background-color: #555;
-      }
-
-      .footer-bottom {
-        text-align: center;
-        margin-top: 60px;
-        padding-top: 20px;
-        border-top: 1px solid rgba(255, 255, 255, 0.2);
-        font-size: 14px;
-        font-weight: 300;
-      }
-
-
+        
+        footer {
+            background-color: #e46885;
+            /* The darker pink from your buttons */
+            color: white;
+            padding: 60px 0 20px 0;
+            margin-top: 60px;
+            /* Space between last card and footer */
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        
+        .footer-col h4 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: #fff;
+        }
+        
+        .footer-col p {
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 400;
+            transition: padding-left 0.3s;
+        }
+        
+        .footer-links a:hover {
+            padding-left: 8px;
+            /* Slide effect on hover */
+            color: white;
+            text-decoration: underline;
+        }
+        /* Newsletter Input Style to match your Hero Button */
+        
+        .newsletter-box {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .newsletter-box input {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 50px;
+            border: none;
+            outline: none;
+            font-family: "Poppins", sans-serif;
+        }
+        
+        .newsletter-box button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .newsletter-box button:hover {
+            background-color: #555;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 14px;
+            font-weight: 300;
+        }
     </style>
 </head>
+
 <body>
-<header>
+    <header>
         <a href="index.html" class="logo">PawHub</a>
         <nav>
-            <a href="" class="active">Home</a>     <!-- Done -->
-            <a href="Adoption_Page.html">Adopt</a> <!-- Done -->
-            <a href="Shop.html">Favourites</a>   <!-- Done -->
+            <a href="" class="active">Home</a>
+            <!-- Done -->
+            <a href="Adoption_Page.html">Adopt</a>
+            <!-- Done -->
+            <a href="Shop.html">Favourites</a>
+            <!-- Done -->
             <a href="blog.html">Blog</a>
             <a href="get-involved.html">Get Involved</a>
             <a href="about_us.html">About Us</a>
@@ -514,120 +447,115 @@
     </div>
 
 
-<section class="featured-video">
-    <h2 class="featured-title">Featured Video</h2>
-    <div class="video-wrapper">
-        <div class="video-container">
-            <iframe width="892" height="498"
-                    src="assets\videos\vids-20251203T165122Z-1-001\img-vids\vids\rescued-wolf-dog.mp4"
-                    title="Featured Pet Video" frameborder="0" allowfullscreen></iframe>
+    <section class="featured-video">
+        <h2 class="featured-title">Featured Video</h2>
+        <div class="video-wrapper">
+            <div class="video-container">
+                <iframe width="892" height="498" src="assets\videos\vids-20251203T165122Z-1-001\img-vids\vids\rescued-wolf-dog.mp4" title="Featured Pet Video" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-text">
+                <h2>The Dodo</h2>
+                <p class="video-text">
+                    A rescued dog spends five days hiding in her crate, slowly learning to trust her new family until she finally realizes she’s safe, loved, and truly home | The Dodo
+                </p>
+            </div>
         </div>
-        <div class="video-text">
-            <h2>The Dodo</h2>
-            <p class="video-text">
-                A rescued dog spends five days hiding in her crate, slowly learning to trust her new family until she finally realizes she’s safe, loved, and truly home | The Dodo
-            </p>
-        </div>
-    </div>
-</section>
+    </section>
 
-<section class="pets-section">
-    <h2 class="section-title">Meet Our Pets🐾</h2>
+    <section class="pets-section">
+        <h2 class="section-title">Meet Our Pets🐾</h2>
 
-    <div class="pets-container">
+        <div class="pets-container">
 
-        <!-- PET CARD 1 -->
-        <div class="pet-card">
-            <img src="assets\images\homepage\dogp.jpg" class="pet-big-img" alt="Dog">
+            <!-- PET CARD 1 -->
+            <div class="pet-card">
+                <img src="assets\images\homepage\dogp.jpg" class="pet-big-img" alt="Dog">
 
-            <div class="pet-circle">
-                <img src="assets\images\homepage\dogp.jpg" alt="Dog">
+                <div class="pet-circle">
+                    <img src="assets\images\homepage\dogp.jpg" alt="Dog">
+                </div>
+
+                <p class="pet-description">
+                    Loyal, playful, and full of love - dogs are more than pets; they're family. Adopt a furry friend today and gain a lifetime of joy and companionship.
+                </p>
+
+                <button onclick="location.href='Adoption_Page.html'" class="pet-button">CHECK FOR MORE</button>
             </div>
 
-            <p class="pet-description">
-                Loyal, playful, and full of love - dogs are more than pets; they're family.
-                Adopt a furry friend today and gain a lifetime of joy and companionship.
-            </p>
+            <!-- PET CARD 2 -->
+            <div class="pet-card">
+                <img src="assets\images\homepage\catkitty.jpg" class="pet-big-img" alt="Dog">
 
-            <button onclick="location.href='Adoption_Page.html'" class="pet-button">CHECK FOR MORE</button>
-        </div>
+                <div class="pet-circle">
+                    <img src="assets\images\homepage\catkitty.jpg" alt="Dog">
+                </div>
 
-        <!-- PET CARD 2 -->
-        <div class="pet-card">
-            <img src="assets\images\homepage\catkitty.jpg" class="pet-big-img" alt="Dog">
+                <p class="pet-description">
+                    Graceful, curious, and affectionate cats bring warmth and comfort to any home. Give a cat a forever home and let their purrs fill your days with peace.
+                </p>
 
-            <div class="pet-circle">
-                <img src="assets\images\homepage\catkitty.jpg" alt="Dog">
+                <button onclick="location.href='Adoption_Page.html'" class="pet-button">CHECK FOR MORE</button>
             </div>
 
-            <p class="pet-description">
-                Graceful, curious, and affectionate  cats bring warmth and comfort to any home.
-                Give a cat a forever home and let their purrs fill your days with peace.
-            </p>
+            <!-- PET CARD 3 -->
+            <div class="pet-card">
+                <img src="assets\images\homepage\kitty.jpg" class="pet-big-img" alt="Dog">
 
-            <button onclick="location.href='Adoption_Page.html'" class="pet-button">CHECK FOR MORE</button>
-        </div>
+                <div class="pet-circle">
+                    <img src="assets\images\homepage\kitty.jpg" alt="Dog">
+                </div>
 
-        <!-- PET CARD 3 -->
-        <div class="pet-card">
-            <img src="assets\images\homepage\kitty.jpg" class="pet-big-img" alt="Dog">
+                <p class="pet-description">
+                    Playful, tiny, and full of wonder, kittens fill your world with joy. Welcome one home and let their curious paws and gentle purrs grow with you.
+                </p>
 
-            <div class="pet-circle">
-                <img src="assets\images\homepage\kitty.jpg" alt="Dog">
+                <button onclick="location.href='Adoption_Page.html'" class="pet-button">CHECK FOR MORE</button>
             </div>
 
-            <p class="pet-description">
-                Playful, tiny, and full of wonder, kittens fill your world with joy.
-                Welcome one home and let their curious paws and gentle purrs grow with you.
-            </p>
+            <!-- PET CARD 4 -->
+            <div class="pet-card">
+                <img src="assets\images\homepage\chihuahua.jpg" class="pet-big-img" alt="Dog">
 
-            <button onclick="location.href='Adoption_Page.html'" class="pet-button">CHECK FOR MORE</button>
-        </div>
+                <div class="pet-circle">
+                    <img src="assets\images\homepage\chihuahua.jpg" alt="Dog">
+                </div>
 
-        <!-- PET CARD 4 -->
-        <div class="pet-card">
-            <img src="assets\images\homepage\chihuahua.jpg" class="pet-big-img" alt="Dog">
+                <p class="pet-description">
+                    Small in size but full of heart, these loyal companions bring endless love and joy to your home.
+                </p>
 
-            <div class="pet-circle">
-                <img src="assets\images\homepage\chihuahua.jpg" alt="Dog">
+                <button onclick="location.href='Adoption_Page.html'" class="pet-button">CHECK FOR MORE</button>
             </div>
 
-            <p class="pet-description">
-                Small in size but full of heart, these loyal companions bring endless love and joy to your home.
-            </p>
-
-            <button onclick="location.href='Adoption_Page.html'" class="pet-button">CHECK FOR MORE</button>
         </div>
+    </section>
 
-    </div>
-</section>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>PawHub</h4>
+                <p>
+                    We believe every pet deserves a loving home. Join our community and find your new best friend today.
+                </p>
+            </div>
 
-<footer>
-    <div class="footer-content">
-        <div class="footer-col">
-            <h4>PawHub</h4>
-            <p>
-                We believe every pet deserves a loving home. Join our community and
-                find your new best friend today.
-            </p>
-        </div>
-
-       <div class="footer-col footer-links">
-            <h4>Quick Links</h4>
-            <ul>
-                <li><a href="">Home</a></li><!-- Done -->
-                <li><a href="Adoption_Page.html">Adopt a Pet</a></li><!-- Done -->
-                <li><a href="blog.html">Care Guides</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="get-involved.html">Volunteer</a></li>
-            </ul>
-       </div>
+            <div class="footer-col footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <!-- Done -->
+                    <li><a href="Adoption_Page.html">Adopt a Pet</a></li>
+                    <!-- Done -->
+                    <li><a href="blog.html">Care Guides</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="get-involved.html">Volunteer</a></li>
+                </ul>
+            </div>
 
             <div class="footer-col">
                 <h4>Stay Updated</h4>
                 <p>
-                    Get the latest adoption tips and cute pet photos delivered to your
-                    inbox.
+                    Get the latest adoption tips and cute pet photos delivered to your inbox.
                 </p>
                 <div class="newsletter-box">
                     <input type="email" placeholder="Enter your email" />
@@ -639,10 +567,8 @@
         <div class="footer-bottom">
             <p>&copy; 2025 PawHub. All Rights Reserved. | Designed with Love.</p>
         </div>
-</footer>
+    </footer>
 
 </body>
+
 </html>
-
-
-
